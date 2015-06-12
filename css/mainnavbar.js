@@ -58,34 +58,36 @@ function serverstatusfiller(ele) {
 }
 function serverinfocleaner() {
     window.setTimeout(function(){
+        window.setTimeout(function(){
         //------------------------------------------------//
         //                  ALL SERVERS                   //
         //------------------------------------------------//
         var divarray = document.getElementById('server_container').childNodes;
-        for (i=0;i<serverlist.length;i++) {
-            var textnode = divarray[i].innerHTML;
-            var textnode = textnode.replace(/\s/g, '');
-            var textnode = textnode.replace('Serveronline', ' Serveronline');
-            var textnode = textnode.replace('Players', ' Players');
-            var textnode = textnode.replace('Total', ' Total');
-            var textnode_tostring = textnode.split(/\s/g);
-                //   [0] = ServerName
-                //   [1] = Serveronline
-                //   [2] = Players
-                //   [3] = Total
-            divarray[i].innerHTML = textnode;
-            var textnode_tostring0 = textnode_tostring[0].replace('ServerName=', '');
-            var textnode_tostring1 = textnode_tostring[1].replace('Serveronline=', '');
-            var textnode_tostring1 = textnode_tostring1.replace('true', 'online');
-            var textnode_tostring1 = textnode_tostring1.replace('false', 'offline');
-            var textnode_tostring2 = textnode_tostring[2].replace('Players=', '');
-            var textnode_tostring3 = textnode_tostring[3].replace('Total=', '');
-            $('div#server_container > div:eq('+i+')').html(
-                '<h1>' + serverlist[i] + '</h1>' +
-                '<span class="Total">Players: ' + textnode_tostring3 + '</span>' +
-                '<span class="Serveronline">' + textnode_tostring1 + '</span>'
-            );
-        }
+            for (i=0;i<serverlist.length;i++) {
+                var textnode = divarray[i].innerHTML;
+                var textnode = textnode.replace(/\s/g, '');
+                var textnode = textnode.replace('Serveronline', ' Serveronline');
+                var textnode = textnode.replace('Players', ' Players');
+                var textnode = textnode.replace('Total', ' Total');
+                var textnode_tostring = textnode.split(/\s/g);
+                    //   [0] = ServerName
+                    //   [1] = Serveronline
+                    //   [2] = Players
+                    //   [3] = Total
+                divarray[i].innerHTML = textnode;
+                var textnode_tostring0 = textnode_tostring[0].replace('ServerName=', '');
+                var textnode_tostring1 = textnode_tostring[1].replace('Serveronline=', '');
+                var textnode_tostring1 = textnode_tostring1.replace('true', 'online');
+                var textnode_tostring1 = textnode_tostring1.replace('false', 'offline');
+                var textnode_tostring2 = textnode_tostring[2].replace('Players=', '');
+                var textnode_tostring3 = textnode_tostring[3].replace('Total=', '');
+                $('div#server_container > div:eq('+i+')').html(
+                    '<h1>' + serverlist[i] + '</h1>' +
+                    '<span class="Total">Players: ' + textnode_tostring3 + '</span>' +
+                    '<span class="Serveronline">' + textnode_tostring1 + '</span>'
+                );
+            }
+        }, 10);
         window.setTimeout(function(){
             //------------------------------------------------//
             //                  FEATURED SERVERS              //
@@ -115,7 +117,7 @@ function serverinfocleaner() {
                     '<span class="Total">Players: ' + textnode_tostring3 + '</span>'
                 );
             }
-        }, 10);
+        }, 50);
         window.setTimeout(function(){
             $('span.Serveronline:contains("online")').addClass('server_online');
             $('span.Serveronline:contains("offline")').addClass('server_offline');
