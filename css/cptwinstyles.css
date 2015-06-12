@@ -695,13 +695,14 @@ body {
     color:#d0d0d0;
 }*/
 .showcase {
-    padding:40px 0px;
+    padding: 20px 0px 0px 0px;
+    background-color:#F26363;
 }
 #showcase_inner {
     background-color:black;
     background-image:url(../img/header-images/eMhHT79.jpg);
     height:270px;
-    width:100%;
+    padding:0px 80px;
     overflow:hidden;
 }
 #showcase_inner > div{
@@ -710,6 +711,7 @@ body {
     display:inline-block;
     margin:0px;
     padding:0px;
+    float:left;
 }
 #showcase_inner > div h1{
     text-align:center;
@@ -739,6 +741,22 @@ body {
     float:left;
     text-align: center;
     width:100%;
+}
+.showcase .buttons {
+    width:80px;
+    height:270px;
+    position:absolute;
+    z-index:10;
+    background-color:rgba(201, 201, 201, 0.48);
+}
+.showcase .buttons:hover {
+    background-color:rgba(210, 210, 210, 0.5);
+}
+.showcase .left {
+    float:left;
+}
+.showcase .right {
+    right:0px;
 }
 /* HEADING SLIDER */
 #headslides > * {

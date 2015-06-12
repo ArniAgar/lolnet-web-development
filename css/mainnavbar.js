@@ -21,8 +21,9 @@ $notifications_body = [
     'As its going to be christmas, eventually, we will do a christmas special event :D'
 ];
 showcase_serverlist = [
-    'LolnetLobby',
-    'Building'
+    'AS2',
+    'Infinity',
+    'Survival'
 ];
 serverlist = [
     '1.7 BC',
@@ -110,7 +111,7 @@ function serverinfocleaner() {
                 var textnode_tostring3 = textnode_tostring[3].replace('Total=', '');
                 $('#showcase_inner > div:eq('+i+')').html(
                     '<span class="Serveronline">' + textnode_tostring1 + '</span>' +
-                    '<h1>' + serverlist[i] + '</h1>' +
+                    '<h1>' + showcase_serverlist[i] + '</h1>' +
                     '<span class="Total">Players: ' + textnode_tostring3 + '</span>'
                 );
             }
