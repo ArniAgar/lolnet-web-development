@@ -1,0 +1,5 @@
+ServerName = AS2
+Server online = true
+Players = [{NULL}]
+Total = 0
+

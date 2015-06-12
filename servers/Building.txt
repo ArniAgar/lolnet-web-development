@@ -1,0 +1,5 @@
+ServerName = Building
+Server online = true
+Players = [{NULL}]
+Total = 0
+

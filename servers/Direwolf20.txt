@@ -1,0 +1,5 @@
+ServerName = Direwolf20
+Server online = true
+Players = [{NULL}]
+Total = 0
+

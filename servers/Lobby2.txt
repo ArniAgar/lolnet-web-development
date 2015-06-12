@@ -1,0 +1,5 @@
+ServerName = Lobby2
+Server online = true
+Players = [{NULL}]
+Total = 1
+

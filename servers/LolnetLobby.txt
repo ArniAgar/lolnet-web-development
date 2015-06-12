@@ -1,0 +1,5 @@
+ServerName = LolnetLobby
+Server online = true
+Players = [{NULL}]
+Total = 0
+

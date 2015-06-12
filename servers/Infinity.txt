@@ -1,0 +1,5 @@
+ServerName = Infinity
+Server online = true
+Players = [{l00STRIKER00l,Zanower}]
+Total = 2
+
