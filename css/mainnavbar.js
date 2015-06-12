@@ -125,11 +125,15 @@ function serverinfocleaner() {
     }, 500);
 }
 function serverloader() {
+    functionone = 0;
+    functiontwo = 0;
     for (i=0;i<showcase_serverlist.length;i++) {
         var showcase_server_list = showcase_serverlist[i].replace(/[\. ,:-]+/g, "");
         var showcase_URIserver_list = showcase_serverlist[i].replace(/ /g, "%20");
         var showcase_import_URI = '../servers/' + showcase_URIserver_list + '.txt';
         $('#showcase_inner > div:eq('+i+')').load(showcase_import_URI);
+        functionone = functionone + 1;
+        check_serverinfocleaner();
     }
     for (i=0;i<serverlist.length;i++) {
         var server_list = serverlist[i].replace(/[\. ,:-]+/g, "");
@@ -137,13 +141,21 @@ function serverloader() {
         var import_URI = '../servers/' + URIserver_list + '.txt';
         $('div#server_container > div:eq('+i+')').load(import_URI);
         //console.log($('div#server_container > div:eq('+i+')').load(import_URI));
+        functiontwo = functiontwo + 1;
+        check_serverinfocleaner();
     }
-    serverinfocleaner();
 }
 function check_serverloader() {
     if (functionone === showcase_serverlist.length) {
         if (functiontwo === serverlist.length) {
             serverloader();
+        }
+    }
+}
+function check_serverinfocleaner() {
+    if (functionone === showcase_serverlist.length) {
+        if (functiontwo === serverlist.length) {
+            serverinfocleaner();
         }
     }
 }
