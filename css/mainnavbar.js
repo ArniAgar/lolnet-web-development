@@ -25,6 +25,7 @@ showcase_serverlist = [
     'Infinity',
     'Survival'
 ];
+showcase_serverlist_current = 0;
 serverlist = [
     '1.7 BC',
     'AS2',
@@ -53,131 +54,10 @@ serverlist = [
 ]
 $notification_number = $notifications_body.length;
 /* END GLOBAL VALUES */
-function serverstatusfiller(ele) {
+function serverstatusfiller(ele) {//legacy
     ele.src = '../img/FullServers.png';
 }
-function server_online() {
-    $('span.Serveronline:contains("online")').addClass('server_online');
-    $('span.Serveronline:contains("offline")').addClass('server_offline');
-}
-function serverloader() {
-    functionone = 0;
-    functiontwo = 0;
-    for (i=0;i<showcase_serverlist.length;i++) {
-        var showcase_server_list = showcase_serverlist[i].replace(/[\. ,:-]+/g, "");
-        var showcase_URIserver_list = showcase_serverlist[i].replace(/ /g, "%20");
-        var showcase_import_URI = '../servers/' + showcase_URIserver_list + '.txt';
-        $('#showcase_inner > div:eq('+i+')').load(showcase_import_URI);
-        functionone++;
-        check_serverinfocleaner();
-    }
-    for (i=0;i<serverlist.length;i++) {
-        var server_list = serverlist[i].replace(/[\. ,:-]+/g, "");
-        var URIserver_list = serverlist[i].replace(/ /g, "%20");
-        var import_URI = '../servers/' + URIserver_list + '.txt';
-        $('div#server_container > div:eq('+i+')').load(import_URI);
-        //console.log($('div#server_container > div:eq('+i+')').load(import_URI));
-        functiontwo++;
-        check_serverinfocleaner();
-    }
-}
-function check_serverloader() {
-    if (functionone === showcase_serverlist.length) {
-        if (functiontwo === serverlist.length) {
-            serverloader();
-        }
-    }
-}
-function check_serverinfocleaner() {
-    if (functionone === showcase_serverlist.length) {
-        if (functiontwo === serverlist.length) {
-            all_serverinfocleaner();
-        }
-    }
-}
-$(function(){
-    functionone = 0;
-    functiontwo = 0;
-    for (i=0;i<showcase_serverlist.length;i++) {
-        var showcase_server_list = showcase_serverlist[i].replace(/[\. ,:-]+/g, "");
-        var showcase_URIserver_list = showcase_serverlist[i].replace(/ /g, "%20");
-        var showcase_$html = $('#showcase_inner').html();
-        var showcase_import_URI = '../servers/' + showcase_URIserver_list + '.txt';
-        $('#showcase_inner').html(showcase_$html + '<div class="' + showcase_server_list + '"></div>');
-        functionone++;
-        check_serverloader();
-    }
-    for (i=0;i<serverlist.length;i++) {
-        var server_list = serverlist[i].replace(/[\. ,:-]+/g, "");
-        var URIserver_list = serverlist[i].replace(/ /g, "%20");
-        var $html = $('#server_container').html();
-        var import_URI = '../servers/' + URIserver_list + '.txt';
-        $('#server_container').html($html + '<div class="' + server_list + '"></div>');
-        functiontwo++;
-        check_serverloader();
-    }
-});
-function all_serverinfocleaner() {
-    window.setTimeout(function(){
-        //------------------------------------------------//
-        //                  FEATURED SERVERS              //
-        //------------------------------------------------//
-        var divarray = document.getElementById('showcase_inner').childNodes;
-        for (i=0;i<showcase_serverlist.length;i++) {
-            var textnode = divarray[i].innerHTML;
-            var textnode = textnode.replace(/\s/g, '');
-            var textnode = textnode.replace('Serveronline', ' Serveronline');
-            var textnode = textnode.replace('Players', ' Players');
-            var textnode = textnode.replace('Total', ' Total');
-            var textnode_tostring = textnode.split(/\s/g);
-                //   [0] = ServerName
-                //   [1] = Serveronline
-                //   [2] = Players
-                //   [3] = Total
-            divarray[i].innerHTML = textnode;
-            var textnode_tostring0 = textnode_tostring[0].replace('ServerName=', '');
-            var textnode_tostring1 = textnode_tostring[1].replace('Serveronline=', '');
-            var textnode_tostring1 = textnode_tostring1.replace('true', 'online');
-            var textnode_tostring1 = textnode_tostring1.replace('false', 'offline');
-            var textnode_tostring2 = textnode_tostring[2].replace('Players=', '');
-            var textnode_tostring3 = textnode_tostring[3].replace('Total=', '');
-            $('#showcase_inner > div:eq('+i+')').html(
-                '<span class="Serveronline">' + textnode_tostring1 + '</span>' +
-                '<h1>' + showcase_serverlist[i] + '</h1>' +
-                '<span class="Total">Players: ' + textnode_tostring3 + '</span>'
-            );
-        }
-        //------------------------------------------------//
-        //                  ALL SERVERS                   //
-        //------------------------------------------------//
-        var divarray = document.getElementById('server_container').childNodes;
-        for (i=0;i<serverlist.length;i++) {
-            var textnode = divarray[i].innerHTML;
-            var textnode = textnode.replace(/\s/g, '');
-            var textnode = textnode.replace('Serveronline', ' Serveronline');
-            var textnode = textnode.replace('Players', ' Players');
-            var textnode = textnode.replace('Total', ' Total');
-            var textnode_tostring = textnode.split(/\s/g);
-                //   [0] = ServerName
-                //   [1] = Serveronline
-                //   [2] = Players
-                //   [3] = Total
-            divarray[i].innerHTML = textnode;
-            var textnode_tostring0 = textnode_tostring[0].replace('ServerName=', '');
-            var textnode_tostring1 = textnode_tostring[1].replace('Serveronline=', '');
-            var textnode_tostring1 = textnode_tostring1.replace('true', 'online');
-            var textnode_tostring1 = textnode_tostring1.replace('false', 'offline');
-            var textnode_tostring2 = textnode_tostring[2].replace('Players=', '');
-            var textnode_tostring3 = textnode_tostring[3].replace('Total=', '');
-            $('div#server_container > div:eq('+i+')').html(
-                '<h1>' + serverlist[i] + '</h1>' +
-                '<span class="Total">Players: ' + textnode_tostring3 + '</span>' +
-                '<span class="Serveronline">' + textnode_tostring1 + '</span>'
-            );
-        }
-        server_online();
-    }, 3000);
-}
+
 $(document).ready(function () {
     var $mainnavbar_is_static = $('.mainnavbar_is_static'), $mainnavbar_is_staticHTML = $('.mainnavbar_is_static').html();
     if (loggedin === 'true') {
@@ -189,6 +69,32 @@ $(document).ready(function () {
     }
 });
 $(document).ready(function () {
+    $('.showcase .right').click(function(){
+        if (showcase_serverlist_current === showcase_serverlist.length - 1) {
+            showcase_serverlist_current = 0;
+        } else {
+            showcase_serverlist_current++;
+        }
+        for (i=0;i<showcase_serverlist.length;i++) {
+            var selector = '#showcase_inner .' + showcase_serverlist[i];
+            $(selector).hide();
+        }
+        var classselection = '#showcase_inner .' + showcase_serverlist[showcase_serverlist_current];
+        $(classselection).show();
+    });
+    $('.showcase .left').click(function(){
+        if (showcase_serverlist_current === 0) {
+            showcase_serverlist_current = showcase_serverlist.length - 1;
+        } else {
+            showcase_serverlist_current--;
+        }
+        for (i=0;i<showcase_serverlist.length;i++) {
+            var selector = '#showcase_inner .' + showcase_serverlist[i];
+            $(selector).hide();
+        }
+        var classselection = '#showcase_inner .' + showcase_serverlist[showcase_serverlist_current];
+        $(classselection).show();
+    });
     for (i=0;i<document.getElementsByTagName('a').length;i++) {
         //removes ajax requests from jquery mobile
         document.getElementsByTagName('a')[i].setAttribute('data-ajax', 'false');
@@ -360,6 +266,10 @@ $(document).ready(function () {
             paddingLeft: 'calc(10% - 10px)',
             width: 'calc(40% + 10px)'
         });
+    });
+    $(".lserverlist button").click(function () {
+        document.location.reload(true);
+        console.info('reloading without cache');
     });
 });
 function pathup(identity) {
@@ -563,3 +473,125 @@ $(document).ready(function () {
     $.mobile.loading().hide();
     $.mobile.loadingMessage = false;//disable jquery mobile loading event
 });
+function server_online() {
+    $('span.Serveronline:contains("online")').addClass('server_online');
+    $('span.Serveronline:contains("offline")').addClass('server_offline');
+}
+function serverloader() {
+    functionone = 0;
+    functiontwo = 0;
+    for (i=0;i<showcase_serverlist.length;i++) {
+        var showcase_server_list = showcase_serverlist[i].replace(/[\. ,:-]+/g, "");
+        var showcase_URIserver_list = showcase_serverlist[i].replace(/ /g, "%20");
+        var showcase_import_URI = '../servers/' + showcase_URIserver_list + '.txt';
+        $('#showcase_inner > div:eq('+i+')').load(showcase_import_URI);
+        functionone++;
+        check_serverinfocleaner();
+    }
+    for (i=0;i<serverlist.length;i++) {
+        var server_list = serverlist[i].replace(/[\. ,:-]+/g, "");
+        var URIserver_list = serverlist[i].replace(/ /g, "%20");
+        var import_URI = '../servers/' + URIserver_list + '.txt';
+        $('div#server_container > div:eq('+i+')').load(import_URI);
+        //console.log($('div#server_container > div:eq('+i+')').load(import_URI));
+        functiontwo++;
+        check_serverinfocleaner();
+    }
+}
+function check_serverloader() {
+    if (functionone === showcase_serverlist.length) {
+        if (functiontwo === serverlist.length) {
+            serverloader();
+        }
+    }
+}
+function check_serverinfocleaner() {
+    if (functionone === showcase_serverlist.length) {
+        if (functiontwo === serverlist.length) {
+            all_serverinfocleaner();
+        }
+    }
+}
+$(document).ready(function () {
+    functionone = 0;
+    functiontwo = 0;
+    for (i=0;i<showcase_serverlist.length;i++) {
+        var showcase_server_list = showcase_serverlist[i].replace(/[\. ,:-]+/g, "");
+        var showcase_URIserver_list = showcase_serverlist[i].replace(/ /g, "%20");
+        var showcase_$html = $('#showcase_inner').html();
+        var showcase_import_URI = '../servers/' + showcase_URIserver_list + '.txt';
+        $('#showcase_inner').html(showcase_$html + '<div class="' + showcase_server_list + '"></div>');
+        functionone++;
+        check_serverloader();
+    }
+    for (i=0;i<serverlist.length;i++) {
+        var server_list = serverlist[i].replace(/[\. ,:-]+/g, "");
+        var URIserver_list = serverlist[i].replace(/ /g, "%20");
+        var $html = $('#server_container').html();
+        var import_URI = '../servers/' + URIserver_list + '.txt';
+        $('#server_container').html($html + '<div class="' + server_list + '"></div>');
+        functiontwo++;
+        check_serverloader();
+    }
+});
+function all_serverinfocleaner() {
+    window.setTimeout(function(){
+        //------------------------------------------------//
+        //                  FEATURED SERVERS              //
+        //------------------------------------------------//
+        var divarray = document.getElementById('showcase_inner').childNodes;
+        for (i=0;i<showcase_serverlist.length;i++) {
+            var textnode = divarray[i].innerHTML;
+            var textnode = textnode.replace(/\s/g, '');
+            var textnode = textnode.replace('Serveronline', ' Serveronline');
+            var textnode = textnode.replace('Players', ' Players');
+            var textnode = textnode.replace('Total', ' Total');
+            var textnode_tostring = textnode.split(/\s/g);
+                //   [0] = ServerName
+                //   [1] = Serveronline
+                //   [2] = Players
+                //   [3] = Total
+            divarray[i].innerHTML = textnode;
+            var textnode_tostring0 = textnode_tostring[0].replace('ServerName=', '');
+            var textnode_tostring1 = textnode_tostring[1].replace('Serveronline=', '');
+            var textnode_tostring1 = textnode_tostring1.replace('true', 'online');
+            var textnode_tostring1 = textnode_tostring1.replace('false', 'offline');
+            var textnode_tostring2 = textnode_tostring[2].replace('Players=', '');
+            var textnode_tostring3 = textnode_tostring[3].replace('Total=', '');
+            $('#showcase_inner > div:eq('+i+')').html(
+                '<span class="Serveronline">' + textnode_tostring1 + '</span>' +
+                '<h1>' + showcase_serverlist[i] + '</h1>' +
+                '<span class="Total">Players: ' + textnode_tostring3 + '</span>'
+            );
+        }
+        //------------------------------------------------//
+        //                  ALL SERVERS                   //
+        //------------------------------------------------//
+        var divarray = document.getElementById('server_container').childNodes;
+        for (i=0;i<serverlist.length;i++) {
+            var textnode = divarray[i].innerHTML;
+            var textnode = textnode.replace(/\s/g, '');
+            var textnode = textnode.replace('Serveronline', ' Serveronline');
+            var textnode = textnode.replace('Players', ' Players');
+            var textnode = textnode.replace('Total', ' Total');
+            var textnode_tostring = textnode.split(/\s/g);
+                //   [0] = ServerName
+                //   [1] = Serveronline
+                //   [2] = Players
+                //   [3] = Total
+            divarray[i].innerHTML = textnode;
+            var textnode_tostring0 = textnode_tostring[0].replace('ServerName=', '');
+            var textnode_tostring1 = textnode_tostring[1].replace('Serveronline=', '');
+            var textnode_tostring1 = textnode_tostring1.replace('true', 'online');
+            var textnode_tostring1 = textnode_tostring1.replace('false', 'offline');
+            var textnode_tostring2 = textnode_tostring[2].replace('Players=', '');
+            var textnode_tostring3 = textnode_tostring[3].replace('Total=', '');
+            $('div#server_container > div:eq('+i+')').html(
+                '<h1>' + serverlist[i] + '</h1>' +
+                '<span class="Total">Players: ' + textnode_tostring3 + '</span>' +
+                '<span class="Serveronline">' + textnode_tostring1 + '</span>'
+            );
+        }
+        server_online();
+    }, 2000);
+}

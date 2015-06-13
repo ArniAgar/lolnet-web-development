@@ -284,6 +284,7 @@ blockquote span.quote {
     background-image:url(../img/header-images/golem.jpg);
     background-position:center center;
     background-size:cover;
+    overflow-y:hidden;
 }
 .sticky .slider_container {
     height:0px;
@@ -694,6 +695,11 @@ body {
     content:attr(class);
     color:#d0d0d0;
 }*/
+.lserverlist button {
+    margin:5px auto;
+    display:block;
+    font-size:0.8em;
+}
 .showcase {
     padding: 20px 0px 0px 0px;
     background-color:#F26363;
@@ -723,6 +729,7 @@ body {
     position: relative;
     top: 30px;
     font-family:"Raleway", "Gill Sans", "Century Gothic", "Myriad Pro", "Arial";
+    text-shadow: 0px 0px 40px rgba(0, 0, 0, 0.57);
 }
 #showcase_inner > div .Serveronline{
     float:right;
@@ -741,6 +748,7 @@ body {
     float:left;
     text-align: center;
     width:100%;
+    text-shadow: 0px 0px 30px #000;
 }
 .showcase .buttons {
     width:80px;
@@ -748,15 +756,24 @@ body {
     position:absolute;
     z-index:10;
     background-color:rgba(201, 201, 201, 0.48);
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 .showcase .buttons:hover {
     background-color:rgba(210, 210, 210, 0.5);
 }
+.showcase .buttons:active {
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.05) inset;
+    background-color:rgba(210, 210, 210, 0.5);
+}
 .showcase .left {
     float:left;
+    background-image:url(../img/UI/arrow-left.png);
 }
 .showcase .right {
     right:0px;
+    background-image:url(../img/UI/arrow-right.png);
 }
 /* HEADING SLIDER */
 #headslides > * {
