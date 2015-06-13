@@ -208,3 +208,26 @@ div.landing img, button:hover {
 .lserverlist > div.mainservers > div h2 {
     text-align:center;
 }
+#server_container > div[class] span.server_online, #server_container > div[class] span.server_offline {
+    width: 100px;
+}
+#server_container > div[class] span.Serveronline {
+    top:0px;
+}
+#server_container > div[class] span {
+    width: 100%;
+}
+div.footer button {
+    text-transform: uppercase;
+    font-size: 2em;
+    width: 100%;
+    max-width:100%;
+}
+.lserverlist > div > div:hover {
+    box-shadow: none;
+}
+.notification_forum {
+    font-size: 2em;
+    display: block;
+    margin: 20px auto 0px auto;
+}

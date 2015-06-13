@@ -700,7 +700,7 @@ body {
     display:block;
     font-size:0.8em;
 }
-.showcase {
+div.landing.showcase {
     padding: 20px 0px 0px 0px;
     background-color:#F26363;
 }
@@ -754,7 +754,7 @@ body {
     width:80px;
     height:270px;
     position:absolute;
-    z-index:10;
+    z-index:9;
     background-color:rgba(201, 201, 201, 0.48);
     background-size: 40px;
     background-repeat: no-repeat;
