@@ -1,5 +1,6 @@
 /*mobile_css*/
 h2 {line-height: 1em;}
+button {transition-duration:0s;}
 .landing {
     padding:5%;
     text-align:left;
@@ -75,7 +76,6 @@ blockquote span.text {
     background-position: left center;
     background-image: url(../img/UI/switch.png);
     background-size: cover;
-    transition-duration: 0.2s;
     color: transparent;
     background-color: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 215, 68, 0.66);

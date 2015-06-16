@@ -5,20 +5,10 @@ mbl_menu_html_inserted = false;
 width_state_achieved = 'large';
 loggedin = 'false';
 $notifications_head = [
-    'What is done',
-    '',
-    '',
-    '',
-    'New Website',
-    'Christmas Event'
+    'What is done'
 ];
 $notifications_body = [
-    'About Us',
-    'Donate',
-    'Home',
-    'Servers - In Progress - Need server web API',
-    'A new website is being rolled out.. stay tuned for more info',
-    'As its going to be christmas, eventually, we will do a christmas special event :D'
+    'About Us, Donate, Servers'
 ];
 showcase_serverlist = [
     'AS2',
@@ -57,7 +47,13 @@ $notification_number = $notifications_body.length;
 function serverstatusfiller(ele) {//legacy
     ele.src = '../img/FullServers.png';
 }
-
+$(document).ready(function () {
+    var x = document.createElement('link');
+    x.rel = 'icon';
+    x.type = 'image/x-icon';
+    x.href = 'https://www.lolnet.co.nz/favicon.ico';
+    document.getElementsByTagName('head')[0].appendChild(x);
+});
 $(document).ready(function () {
     var $mainnavbar_is_static = $('.mainnavbar_is_static'), $mainnavbar_is_staticHTML = $('.mainnavbar_is_static').html();
     if (loggedin === 'true') {
@@ -277,13 +273,13 @@ $(document).ready(function () {
 function pathup(identity) {
     //pathup goes till onerror === false
     identity.setAttribute('href', '../' + identity.getAttribute('href'));
-    console.log('pathing fixed for attribute href: \'' + identity.getAttribute('href') + '\' loaded');
+    console.log('pathing fix applied to element with href attribute. \'' + identity.getAttribute('href') + '\' loaded');
     //written to console incase devs wonder why errors are in console
 }
 function pathup_src(identity) {
     //pathup goes till onerror === false
     identity.setAttribute('src', '../' + identity.getAttribute('src'));
-    console.log('pathing fixed for attribute src: \'' + identity.getAttribute('src') + '\' loaded');
+    console.log('pathing fix applied to element with src attribute.\'' + identity.getAttribute('src') + '\' loaded');
     //written to console incase devs wonder why errors are in console
 }
 //AppSideMenu
@@ -478,6 +474,7 @@ $(document).ready(function () {
 function server_online() {
     $('span.Serveronline:contains("online")').addClass('server_online');
     $('span.Serveronline:contains("offline")').addClass('server_offline');
+    $('.showcase .buttons').attr('onmousedown', 'return false');
 }
 function serverloader() {
     functionone = 0;
@@ -562,8 +559,8 @@ function all_serverinfocleaner() {
             var textnode_tostring3 = textnode_tostring[3].replace('Total=', '');
             $('#showcase_inner > div:eq('+i+')').html(
                 '<span class="Serveronline">' + textnode_tostring1 + '</span>' +
-                '<h1>' + showcase_serverlist[i] + '</h1>' +
-                '<span class="Total">Players: ' + textnode_tostring3 + '</span>'
+                '<h1><span>' + showcase_serverlist[i] + '</span></h1>' +
+                '<span class="Total"><span>Players: ' + textnode_tostring3 + '</span></span>'
             );
         }
         //------------------------------------------------//

@@ -31,9 +31,16 @@
 	src:url('../font/KeepCalm-Medium.ttf');
 }
 /*end global*/
-html, body, div {
+html, body, div, iframe {
     border:none;
     outline:none;
+}
+html {
+    height:auto;
+}
+iframe {
+    width:100%;
+    height:100%;
 }
 .newsocialicons {
 	float:right;
@@ -177,6 +184,9 @@ blockquote span.quote {
 }
 /*------------ONE---------------*/
 /* STYLE ONE FOR NAVIGATION BAR */
+.current_page_item {
+    color:#FFF;
+}
 .mainnavbar {
     font-family:"KeepCalm", "Code Bold", "Arial";
     text-align:center;
@@ -198,6 +208,7 @@ blockquote span.quote {
     overflow:visible;
     position:absolute;
     -webkit-font-smoothing:antialiased;
+    z-index:20;
 }
 .mainnavbar_is_static {
     font-size:15px;
@@ -213,13 +224,14 @@ blockquote span.quote {
     position:absolute;
 }
 .mainnavbarfiller {
-    font-family:"Code Bold", "Arial";
-    font-size:15px;
+    font-family:"KeepCalm", "Code Bold", "Arial";
+    font-size:1.2em;
     text-align:center;
     background-color:#2D2D2D;
     color:transparent;
+    text-transform:uppercase;
     width:100%;
-    font-weight:bold;
+    font-weight:400;
     padding:10px 0px;
 }
 .sticky-padding {
@@ -248,10 +260,11 @@ blockquote span.quote {
 .mainnavbar > div > a > div:hover {
     color:white;
 }
-.mainnavbar > div > a > div:active {
-}
 .navbardonate {
     color:rgb(70, 176, 104);
+}
+.navbarleapingtiger {
+    color:#FF5F00;
 }
 .navbarvote {
     color:rgb(59, 149, 203);
@@ -441,8 +454,23 @@ img.img_bubble.notifications_bubble_is_sticky {
     top:40px;
 }
 /* MAGIC BAR */
-#magic-line { position:absolute; bottom:0px; left:0; width:100px; height:4px; background:#FFF; }
-
+#magic-line { position:absolute; bottom:0px; left:0; width:100px; height:4px; background:#FFF;}
+#magic-line- { 
+    position:absolute; 
+    top:0px; 
+    left:0; 
+    width:100px; 
+    height:100%; 
+    background-image:url(../images/smilies/minecraft/cloth5yellow.png);
+    background-attachment: fixed;
+    background-blend-mode:;
+    z-index:-1;
+}
+.mainnavbar- {
+    background-size:54px, auto;
+    background-repeat:no-repeat, repeat;
+    background-image:url(../images/lolnetlogo.png), url(../images/smilies/minecraft/cloth1black.png);
+}
 /* END STYLE ONE FOR NAVIGATION BAR */
 
 /* BEGIN FORUM STYLING */
@@ -679,6 +707,12 @@ body {
     position: relative;
     top: 25px;
 }
+#showcase_inner > div .Serveronline.server_online {
+    background-color:green;
+}
+#showcase_inner > div .Serveronline.server_offline {
+    background-color:#C63333;
+}
 #server_container > div[class] span.server_online {
     background-color:#32B732;
     width:70px;
@@ -729,13 +763,24 @@ div.landing.showcase {
     position: relative;
     top: 30px;
     font-family:"Raleway", "Gill Sans", "Century Gothic", "Myriad Pro", "Arial";
-    text-shadow: 0px 0px 40px rgba(0, 0, 0, 0.57);
+}
+#showcase_inner > div h1 > span, #showcase_inner > div > span > span {
+    background-image: url(../img/UI/wood80.png);
+    padding:0px 10px;
+    border-radius:3px;
+}
+#showcase_inner > div .Serveronline::selection,
+#showcase_inner > div .Serveronline::-webkit-selection,
+#showcase_inner > div .Serveronline::-moz-selection,
+#showcase_inner > div .Serveronline::-ms-selection
+#showcase_inner > div .Serveronline::-o-selection {
+    background-color:transparent;
 }
 #showcase_inner > div .Serveronline{
     float:right;
     position: relative;
     top: 234px;
-    background-color: green;
+    background-color: grey;
     line-height: 0.9em;
     border-top-left-radius: 50px;
     padding: 0px 10px 0px 20px;
@@ -743,12 +788,11 @@ div.landing.showcase {
 }
 #showcase_inner > div .Total{
     position: relative;
-    top: 25px;
+    top: 32px;
     display:block;
     float:left;
     text-align: center;
     width:100%;
-    text-shadow: 0px 0px 30px #000;
 }
 .showcase .buttons {
     width:80px;
