@@ -1,8 +1,19 @@
 /*mobile_css*/
+h2 {line-height: 1em;}
 .landing {
     padding:5%;
     text-align:left;
     font-size:3em;
+}
+blockquote span.quote {
+    display:none;
+}
+blockquote {
+    margin:10px;
+    padding:10px;
+}
+blockquote span.text {
+    width:auto;
 }
 .mainnavbar {
     position:fixed;
@@ -228,6 +239,33 @@ div.footer button {
 }
 .notification_forum {
     font-size: 2em;
-    display: block;
-    margin: 20px auto 0px auto;
+    margin: 20px 10% 0px;
+    text-align: center;
+    display: inline-block;
+    width: 80%;
+}
+.donate table.showcase {min-width:0px;}
+.donate table.showcase td {display:block;}
+.donate .coinstable {
+    margin: 10px -35px;
+    width: 100%;
+}
+.donate .coinstable td {padding:5px;}
+.donate .coinstable td:first-child {
+    height:100px;
+}
+.donate .coinstable td h2 {
+    transform: rotate(-90deg);
+}
+.donate .coinstable tr:nth-child(3) > td:first-child {
+    height:80px;
+}
+.donate .coinstable tr:nth-child(3) > td {
+    padding:0px;
+}
+.donate .coinstable tr:nth-child(3) > td > form > input {
+    width:90px;
+}
+.donate .coinstable tr:nth-child(3) > td > form > table {
+    display:none;
 }

@@ -124,31 +124,33 @@ $(document).ready(function () {
     }
     document.onscroll = scroll;
     // Magic Line
-    var $el, leftPos, newWidth, $mainNav = $(".mainnavbar");
-    $mainNav.append("<div id='magic-line'></div>");
-    var $magicLine = $("#magic-line");
-    $magicLine
-        .width($(".current_page_item").width() + 20)//the '20' comes from the padding of the element
-        .css("left", $(".current_page_item").position().left)
-        .data("origLeft", $magicLine.position().left)
-        .data("origWidth", $magicLine.width());
-    $(".mainnavbar div a div").hover(function () {
-        var $window = $(window);
-        var windowsize = $window.width();
-        $el = $(this);
-        leftPos = $el.position().left;
-        leftPosPercent = (leftPos / windowsize) * 100;
-        newWidth = $el.width() + 20;
-        $magicLine.stop().animate({
-            left: leftPosPercent + '%',
-            width: newWidth
+    window.setTimeout(function(){
+        var $el, leftPos, newWidth, $mainNav = $(".mainnavbar");
+        $mainNav.append("<div id='magic-line'></div>");
+        var $magicLine = $("#magic-line");
+        $magicLine
+            .width($(".current_page_item").width() + 20)//the '20' comes from the padding of the element
+            .css("left", $(".current_page_item").position().left)
+            .data("origLeft", $magicLine.position().left)
+            .data("origWidth", $magicLine.width());
+        $(".mainnavbar div a div").hover(function () {
+            var $window = $(window);
+            var windowsize = $window.width();
+            $el = $(this);
+            leftPos = $el.position().left;
+            leftPosPercent = (leftPos / windowsize) * 100;
+            newWidth = $el.width() + 20;
+            $magicLine.stop().animate({
+                left: leftPosPercent + '%',
+                width: newWidth
+            });
+        }, function () {
+            $magicLine.stop().animate({
+                left: $magicLine.data("origLeft"),
+                width: $magicLine.data("origWidth")
+            });
         });
-    }, function () {
-        $magicLine.stop().animate({
-            left: $magicLine.data("origLeft"),
-            width: $magicLine.data("origWidth")
-        });
-    });
+    }, 10);
     //blockquotes
     var bq = $('blockquote');
     var bqtxt = bq.text();
