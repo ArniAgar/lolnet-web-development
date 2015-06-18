@@ -42,12 +42,14 @@ serverlist = [
     'VotingMF',
     'VotingVanilla'   
 ]
+serverlist_IP = null; 
 $notification_number = $notifications_body.length;
 /* END GLOBAL VALUES */
 function serverstatusfiller(ele) {//legacy
     ele.src = '../img/FullServers.png';
 }
-$(document).ready(function () {
+$(document).ready(function() {
+    $('.serverlist_IP_buffer').load('../servers/ip.txt');
     var x = document.createElement('link');
     x.rel = 'icon';
     x.type = 'image/x-icon';
@@ -72,10 +74,10 @@ $(document).ready(function () {
             showcase_serverlist_current++;
         }
         for (i=0;i<showcase_serverlist.length;i++) {
-            var selector = '#showcase_inner .' + showcase_serverlist[i];
+            var selector = '#showcase_inner .showcase' + showcase_serverlist[i];
             $(selector).hide();
         }
-        var classselection = '#showcase_inner .' + showcase_serverlist[showcase_serverlist_current];
+        var classselection = '#showcase_inner .showcase' + showcase_serverlist[showcase_serverlist_current];
         $(classselection).show();
     });
     $('.showcase .left').click(function(){
@@ -85,10 +87,10 @@ $(document).ready(function () {
             showcase_serverlist_current--;
         }
         for (i=0;i<showcase_serverlist.length;i++) {
-            var selector = '#showcase_inner .' + showcase_serverlist[i];
+            var selector = '#showcase_inner .showcase' + showcase_serverlist[i];
             $(selector).hide();
         }
-        var classselection = '#showcase_inner .' + showcase_serverlist[showcase_serverlist_current];
+        var classselection = '#showcase_inner .showcase' + showcase_serverlist[showcase_serverlist_current];
         $(classselection).show();
     });
     for (i=0;i<document.getElementsByTagName('a').length;i++) {
@@ -474,7 +476,6 @@ $(document).ready(function () {
 function server_online() {
     $('span.Serveronline:contains("online")').addClass('server_online');
     $('span.Serveronline:contains("offline")').addClass('server_offline');
-    $('.showcase .buttons').attr('onmousedown', 'return false');
 }
 function serverloader() {
     functionone = 0;
@@ -519,7 +520,7 @@ $(document).ready(function () {
         var showcase_URIserver_list = showcase_serverlist[i].replace(/ /g, "%20");
         var showcase_$html = $('#showcase_inner').html();
         var showcase_import_URI = '../servers/' + showcase_URIserver_list + '.txt';
-        $('#showcase_inner').html(showcase_$html + '<div class="' + showcase_server_list + '"></div>');
+        $('#showcase_inner').html(showcase_$html + '<div class="showcase' + showcase_server_list + '"></div>');
         functionone++;
         check_serverloader();
     }
@@ -592,5 +593,25 @@ function all_serverinfocleaner() {
             );
         }
         server_online();
+        $('#server_container div').click(function () {//Alerts user to the IP of a server when onclick()
+            var el_top = $(this);
+            var el_h1 = '.' + el_top.attr('class') + ' h1';
+            var el_text = $(el_h1).text();
+            var serverlist_raw = $('.serverlist_IP_buffer').html();
+            serverlist_raw = serverlist_raw.substring(0, serverlist_raw.length - 1);
+            var serverlist_ip_array = serverlist_raw.replace(/\[/g, '');
+            var serverlist_ip_array = serverlist_ip_array.split(/\]/);
+            var serverlist_name_array = serverlist_raw.replace(/\[/g, '');
+            var serverlist_name_array = serverlist_name_array.replace(/\]\s/g, '\]');
+            var serverlist_name_array = serverlist_name_array.split(/\]/);
+            for (i=0;i<serverlist_name_array.length;i++) {
+                serverlist_ip_array[i] = serverlist_ip_array[i].replace(/^[^=]*=/, '');//returns IP of element
+                serverlist_name_array[i] = serverlist_name_array[i].substring(0, serverlist_name_array[i].lastIndexOf('='));//returns name of element
+                if (el_text === serverlist_name_array[i]) {
+                    window.alert('Server: ' + serverlist_name_array[i] + '\nIP connect: ' + serverlist_ip_array[i])
+                }
+            }
+            
+        });
     }, 2000);
 }

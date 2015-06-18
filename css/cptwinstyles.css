@@ -463,7 +463,6 @@ img.img_bubble.notifications_bubble_is_sticky {
     height:100%; 
     background-image:url(../images/smilies/minecraft/cloth5yellow.png);
     background-attachment: fixed;
-    background-blend-mode:;
     z-index:-1;
 }
 .mainnavbar- {
@@ -769,13 +768,11 @@ div.landing.showcase {
     padding:0px 10px;
     border-radius:3px;
 }
-#showcase_inner > div .Serveronline::selection,
-#showcase_inner > div .Serveronline::-webkit-selection,
-#showcase_inner > div .Serveronline::-moz-selection,
-#showcase_inner > div .Serveronline::-ms-selection
-#showcase_inner > div .Serveronline::-o-selection {
-    background-color:transparent;
-}
+#showcase_inner > div .Serveronline::selection {background-color:transparent;}
+#showcase_inner > div .Serveronline::-webkit-selection {background-color:transparent;}
+#showcase_inner > div .Serveronline::-moz-selection {background-color:transparent;}
+#showcase_inner > div .Serveronline::-ms-selection {background-color:transparent;}
+#showcase_inner > div .Serveronline::-o-selection {background-color:transparent;}
 #showcase_inner > div .Serveronline{
     float:right;
     position: relative;
@@ -850,3 +847,4 @@ div.landing.showcase {
     height:100%;
     margin:0px auto;
 }
+.serverlist_IP_buffer {display:none;}
