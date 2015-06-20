@@ -17,6 +17,7 @@
 [SkyWars=lolnet.co.nz]
 [Survival=lolnet.co.nz]
 [TolkienCraft=rings.lolnet.co.nz]
+[TolkienCraftDev=rings.lolnet.co.nz]
 [Tyla=lolnet.co.nz]
 [UAServer=lolnet.co.nz]
 [VotingMF=lolnet.co.nz]

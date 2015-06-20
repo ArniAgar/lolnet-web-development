@@ -1,7 +1,5 @@
 /*begin global*/
-* {
-    text-rendering:optimizeLegibility;
-}
+* {text-rendering:optimizeLegibility;}
 @font-face {
 	font-family:'Raleway';
 	src:url('../font/Raleway%20Thin.ttf');
@@ -41,6 +39,58 @@ html {
 iframe {
     width:100%;
     height:100%;
+}
+.alert {
+    position: fixed;
+    top: 45%;
+    left: 45%;
+    z-index: 499;
+    background-color:#2D2D2D;
+    min-width:260px;
+    min-height:120px;
+    display:none;
+    color:white;
+    font-weight:bold;
+    font-size:1.3em;
+    box-shadow: 0px 0px 35px -5px black;
+    border: 2px outset rgba(255, 255, 255, 0.16);
+    border-radius: 2px;
+}
+.alert .heading {
+    display:block;
+    font-size:3em;
+    padding:10px;
+    font-family:"Raleway", "Gill Sans", "Century Gothic", "Myriad Pro", "Arial";
+    z-index: 1;
+}
+.alert .fullscreenoverlay {
+    display:block;
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.alert .contents {
+    display:block;
+    font-size:1.2em;
+    padding:5px 10px;
+    z-index: 1;
+}
+.alert .foot {
+    display:block;
+    font-size:1.2em;
+    padding:10px;
+    overflow:auto;
+    border-top:1px solid #434343;
+    z-index: 1;
+}
+.alert .foot button {
+    float:right;
+    font-size:1em;
+    min-width: 110px;
 }
 .newsocialicons {
 	float:right;
@@ -505,6 +555,7 @@ div.footer button{
     width:calc(100% - 100px);
     font-size:1.5em;
     text-decoration:none;
+    font-weight: bold;
 }
 div.footer > div {
     display:inline-block;
@@ -818,7 +869,7 @@ body {
 .lserverlist > div > div.Lobby2         {background-image:url('../img/res/Survival%20(8).jpg');}
 .lserverlist > div > div.LolnetLobby    {background-image:url('../img/res/Survival%20(9).jpg');}
 .lserverlist > div > div.MobArena       {background-image:url('../img/res/Survival%20(1).jpg');}
-.lserverlist > div > div.Mumble         {background-image:url('../img/res/Survival%20(2).jpg');}
+.lserverlist > div > div.Mumble         {background-image:url('../img/res/Mumble.jpg');}
 .lserverlist > div > div.Resurrection   {background-image:url('../img/res/Survival%20(3).jpg');}
 .lserverlist > div > div.Skyblock       {background-image:url('../img/res/Survival%20(4).jpg');}
 .lserverlist > div > div.skyfactory     {background-image:url('../img/res/Survival%20(5).jpg');}
@@ -959,3 +1010,42 @@ div.landing.showcase {
     margin:0px auto;
 }
 .serverlist_IP_buffer {display:none;}
+/* CREW PAGE */
+.bio {
+    font-size: 0.4em;
+    font-family:"Verdana", "Helvetica", "Arial", sans-serif;
+    border: 1px solid white;
+    padding: 15px;
+    border-radius: 50px;
+    overflow: hidden;
+    margin: 15px 0px;
+}
+.bio:nth-child(odd) img {
+    float:left;
+}
+.bio:nth-child(even) img {
+    float:right;
+}
+.bio div{
+    line-height: 1.2em; 
+}
+.bio:nth-child(even) div > h2, .bio:nth-child(even) div > h3 {
+    text-align: right;
+}
+.bio div > h2 {
+    line-height: 1em;
+    color:white;
+    font-family:"Raleway", "Gill Sans", "Century Gothic", "Myriad Pro", "Arial";
+    font-size: 2.3em;
+    font-weight:bold;
+    margin: 0px 0px 2px 0px;
+}
+.bio div > h3 {
+    line-height: 1em;
+    margin: 0px 0px 10px 0px;
+    color:white;
+    font-family:"Raleway", "Gill Sans", "Century Gothic", "Myriad Pro", "Arial";
+    font-size: 1.3em;
+    border:none;
+    text-transform: none;
+}

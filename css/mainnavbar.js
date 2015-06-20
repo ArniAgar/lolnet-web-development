@@ -5,10 +5,12 @@ mbl_menu_html_inserted = false;
 width_state_achieved = 'large';
 loggedin = 'true';
 $notifications_head = [
-    'What is done'
+    'What is done',
+    'Github'
 ];
 $notifications_body = [
-    'About Us, Donate, Servers'
+    'About Us, Donate, Servers',
+    '<a href="https://github.com/ladybugman/lolnet-web-development">view on github</a>'
 ];
 showcase_serverlist = [
     'AS2',
@@ -49,6 +51,8 @@ function serverstatusfiller(ele) {//legacy
     ele.src = '../img/FullServers.png';
 }
 $(document).ready(function() {
+    var pageheaderhtml = $('#page-header').html();
+    $('#page-header').html(pageheaderhtml + '<span class="alert"><div class="fullscreenoverlay hideme"></div><span class="heading"></span><span class="contents"></span><span class="foot"></span></span>');
     $('.serverlist_IP_buffer').load('../servers/ip.txt');
     var x = document.createElement('link');
     x.rel = 'icon';
@@ -617,14 +621,18 @@ function all_serverinfocleaner() {
             for (i=0;i<serverlist_name_array.length;i++) {
                 serverlist_ip_array[i] = serverlist_ip_array[i].replace(/^[^=]*=/, '');//returns IP of element
                 serverlist_name_array[i] = serverlist_name_array[i].substring(0, serverlist_name_array[i].lastIndexOf('='));//returns name of element
-                if (el_text === serverlist_name_array[i]) {
-                    window.alert('Server: ' + serverlist_name_array[i] + '\nIP connect: ' + serverlist_ip_array[i])
+                if (el_text === serverlist_name_array[i]) {//event called
+                    if (document.getElementsByClassName('alert')[0]) {
+                        $('.alert .heading').html(serverlist_name_array[i]);
+                        $('.alert .contents').html('IP connect: ' + serverlist_ip_array[i]);
+                        $('.alert .foot').html('<button class="hideme">okay</button>');
+                        $('.alert').show();
+                        $('.hideme').click(function () {$('.alert').hide();});
+                    } else {
+                        window.alert('Server: ' + serverlist_name_array[i] + '\nIP connect: ' + serverlist_ip_array[i]);
+                    }
                 }
             }
-        });
-        var initheight = $('#server_container .AS2').height();
-        $('#server_container .AS2').css({
-            height: initheight,
         });
     }, 2000);
 }
