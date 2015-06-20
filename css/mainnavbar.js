@@ -3,7 +3,7 @@ $extlinks = $('.mainnavbar_is_static #mainnavbarcenter').html();
 $intlinks = $('.mainnavbar #mainnavbarcenter').html();
 mbl_menu_html_inserted = false;
 width_state_achieved = 'large';
-loggedin = 'false';
+loggedin = 'true';
 $notifications_head = [
     'What is done'
 ];
@@ -40,7 +40,7 @@ serverlist = [
     'Tyla',
     'UAServer',
     'VotingMF',
-    'VotingVanilla'   
+    'VotingVanilla'
 ]
 serverlist_IP = null; 
 $notification_number = $notifications_body.length;
@@ -76,9 +76,12 @@ $(document).ready(function () {
         for (i=0;i<showcase_serverlist.length;i++) {
             var selector = '#showcase_inner .showcase' + showcase_serverlist[i];
             $(selector).hide();
+            $('#showcase_inner').css({ backgroundImage: 'none' });
         }
         var classselection = '#showcase_inner .showcase' + showcase_serverlist[showcase_serverlist_current];
         $(classselection).show();
+        var imgname = showcase_serverlist[showcase_serverlist_current];
+        $('#showcase_inner').css({ backgroundImage: 'url("../img/res/' + imgname + '.jpg")' });
     });
     $('.showcase .left').click(function(){
         if (showcase_serverlist_current === 0) {
@@ -89,9 +92,12 @@ $(document).ready(function () {
         for (i=0;i<showcase_serverlist.length;i++) {
             var selector = '#showcase_inner .showcase' + showcase_serverlist[i];
             $(selector).hide();
+            $('#showcase_inner').css({ backgroundImage: 'none' });
         }
         var classselection = '#showcase_inner .showcase' + showcase_serverlist[showcase_serverlist_current];
         $(classselection).show();
+        var imgname = showcase_serverlist[showcase_serverlist_current];
+        $('#showcase_inner').css({ backgroundImage: 'url("../img/res/' + imgname + '.jpg")' });
     });
     for (i=0;i<document.getElementsByTagName('a').length;i++) {
         //removes ajax requests from jquery mobile
@@ -476,6 +482,8 @@ $(document).ready(function () {
 function server_online() {
     $('span.Serveronline:contains("online")').addClass('server_online');
     $('span.Serveronline:contains("offline")').addClass('server_offline');
+    var imgname = showcase_serverlist[0];
+    $('#showcase_inner').css({ backgroundImage: 'url("../img/res/' + imgname + '.jpg")' });
 }
 function serverloader() {
     functionone = 0;
@@ -588,8 +596,10 @@ function all_serverinfocleaner() {
             var textnode_tostring3 = textnode_tostring[3].replace('Total=', '');
             $('div#server_container > div:eq('+i+')').html(
                 '<h1>' + serverlist[i] + '</h1>' +
+                '<span>' + 
                 '<span class="Total">Players: ' + textnode_tostring3 + '</span>' +
-                '<span class="Serveronline">' + textnode_tostring1 + '</span>'
+                '<span class="Serveronline">' + textnode_tostring1 + '</span>' +
+                '</span>'
             );
         }
         server_online();
@@ -611,7 +621,10 @@ function all_serverinfocleaner() {
                     window.alert('Server: ' + serverlist_name_array[i] + '\nIP connect: ' + serverlist_ip_array[i])
                 }
             }
-            
+        });
+        var initheight = $('#server_container .AS2').height();
+        $('#server_container .AS2').css({
+            height: initheight,
         });
     }, 2000);
 }

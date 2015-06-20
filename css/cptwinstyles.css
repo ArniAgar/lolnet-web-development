@@ -629,7 +629,7 @@ body {
 .donate .lolcoinsheader {
     margin-top:130px;
 }
-/* SERVER LIST */
+/* SERVER LIST *//*
 .lserverlist > div {
     margin:0px auto;
     display:block;
@@ -723,11 +723,123 @@ body {
     width:70px;
     margin-left:40%;
     text-align: center;
-}
-/*#server_container > div[class]:after { for testing purposes (not needed)
-    content:attr(class);
-    color:#d0d0d0;
 }*/
+/* SERVER LIST */
+/* M O D E R N   U I */
+.lserverlist {
+    padding:60px 0px;
+}
+.lserverlist > div {
+    margin:0px auto;
+    display:block;
+    overflow:auto;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 30px 0px;
+    overflow-x: hidden;
+}
+.lserverlist > div > div:hover {
+    outline:none;
+    transform: scale(1.1,1.1);
+}
+.lserverlist > div > div:active {
+    outline:none;
+    box-shadow: inset 0px 108px 0px 0px rgba(255, 255, 255, 0.2);
+}
+.lserverlist > div > div {
+    overflow: hidden;
+    display: inline-block;
+    float: left;
+    min-width: 250px;
+    width: calc(25% - 4px);
+    box-sizing: border-box;
+    box-shadow: 0px 108px 0px 0px rgba(255, 255, 255, 0) inset;
+    transition-duration: 0.1s;
+    margin: 2px;
+    background-image:url('../img/res/src/Survival%20(7).png');
+    border-radius: 2px;
+    color:#f8f8f8;
+    background-size:cover;
+    background-position: center center;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+    font-smooth: always;
+}
+#server_container > div[class] h1 {
+    line-height:1.2em;
+    display:block;
+    font-family:"Raleway", "Gill Sans", "Century Gothic", "Myriad Pro", "Arial";
+    margin:30px 0px;
+    text-align: center;
+    text-shadow: 0px 0px 10px #202020;
+}
+#server_container > div[class] > span {
+    display:block;
+    overflow: auto;
+    padding:0px 20px;
+    background-color: rgba(15, 15, 15, 0.41);
+    overflow:hidden;
+}
+#server_container > div[class] > span > span {
+    line-height:1em;
+    display:block;
+    margin:0px;
+    font-family:"Raleway", "Gill Sans", "Century Gothic", "Myriad Pro", "Arial";
+    width:50%;
+    float:left;
+}
+#server_container > div[class] span.Serveronline {
+    text-align: center;
+    margin: 0px 0px 0px 20%;
+    width: 30%;
+    color:black;
+}
+#server_container > div.AS2 h1 {
+    line-height: 4em;
+    margin-bottom: 50px;
+}
+.lserverlist > div > div.AS2:active {
+    box-shadow: inset 0px 240px 0px 0px rgba(255, 255, 255, 0.2);
+}
+.lserverlist > div > div.AS2            {background-image:url('../img/res/Agrarian%20Skies%202%20(3).jpg');float:right;box-shadow: inset 0px 240px 0px 0px rgba(255, 255, 255, 0);}
+.lserverlist > div > div.Direwolf20     {background-image:url('../img/res/Direwolf20%20(4).jpg');}
+.lserverlist > div > div.Infinity       {background-image:url('../img/res/Infinity%20(7).jpg');width: calc(50% - 4px);}
+.lserverlist > div > div.Survival       {background-image:url('../img/res/Survival%20(6).jpg');}
+.lserverlist > div > div:first-child    {background-image:url('../img/res/Survival%20(1).jpg');}
+.lserverlist > div > div.Building       {background-image:url('../img/res/Survival%20(2).jpg');}
+.lserverlist > div > div.CreativePlot   {background-image:url('../img/res/Survival%20(3).jpg');}
+.lserverlist > div > div.Factions       {background-image:url('../img/res/Survival%20(4).jpg');}
+.lserverlist > div > div.HungerGames    {background-image:url('../img/res/Survival%20(5).jpg');}
+.lserverlist > div > div.Huxley         {background-image:url('../img/res/Survival%20(7).jpg');}
+.lserverlist > div > div.Lobby2         {background-image:url('../img/res/Survival%20(8).jpg');}
+.lserverlist > div > div.LolnetLobby    {background-image:url('../img/res/Survival%20(9).jpg');}
+.lserverlist > div > div.MobArena       {background-image:url('../img/res/Survival%20(1).jpg');}
+.lserverlist > div > div.Mumble         {background-image:url('../img/res/Survival%20(2).jpg');}
+.lserverlist > div > div.Resurrection   {background-image:url('../img/res/Survival%20(3).jpg');}
+.lserverlist > div > div.Skyblock       {background-image:url('../img/res/Survival%20(4).jpg');}
+.lserverlist > div > div.skyfactory     {background-image:url('../img/res/Survival%20(5).jpg');}
+.lserverlist > div > div.SkyWars        {background-image:url('../img/res/Survival%20(6).jpg');}
+.lserverlist > div > div.TolkienCraft   {background-image:url('../img/res/Survival%20(7).jpg');}
+.lserverlist > div > div.Tyla           {background-image:url('../img/res/Survival%20(8).jpg');}
+.lserverlist > div > div.UAServer       {background-image:url('../img/res/Survival%20(1).jpg');}
+.lserverlist > div > div.VotingMF       {background-image:url('../img/res/Survival%20(2).jpg');}
+.lserverlist > div > div.VotingVanilla  {background-image:url('../img/res/Survival%20(3).jpg');}
+#showcase_inner > div .Serveronline.server_online {
+    background-color:green;
+}
+#showcase_inner > div .Serveronline.server_offline {
+    background-color:#C63333;
+}
+#server_container > div[class] span.server_online {
+    background-color:#32B732;
+}
+#server_container > div[class] span.server_offline {
+    background-color:#C63333;
+}
 .lserverlist button {
     margin:5px auto;
     display:block;
@@ -738,8 +850,7 @@ div.landing.showcase {
     background-color:#F26363;
 }
 #showcase_inner {
-    background-color:black;
-    background-image:url(../img/header-images/eMhHT79.jpg);
+    background-position: center center;
     height:270px;
     padding:0px 80px;
     overflow:hidden;
