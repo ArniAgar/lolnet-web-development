@@ -269,3 +269,5 @@ div.footer button {
 .donate .coinstable tr:nth-child(3) > td > form > table {
     display:none;
 }
+.leaping-tiger {padding:0px;background-color:#F0F0F0;}
+.leaping-tiger iframe{border-radius:0px;}

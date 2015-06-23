@@ -44,7 +44,7 @@ iframe {
     position: fixed;
     top: 45%;
     left: 45%;
-    z-index: 499;
+    z-index: 503;
     background-color:#2D2D2D;
     min-width:260px;
     min-height:120px;
@@ -55,6 +55,7 @@ iframe {
     box-shadow: 0px 0px 35px -5px black;
     border: 2px outset rgba(255, 255, 255, 0.16);
     border-radius: 2px;
+    max-width: 550px;
 }
 .alert .heading {
     display:block;
@@ -78,6 +79,10 @@ iframe {
     font-size:1.2em;
     padding:5px 10px;
     z-index: 1;
+}
+.alert .contents span.troubleshooting{
+    font-size: 0.7em;
+    font-weight: 100;
 }
 .alert .foot {
     display:block;
@@ -293,7 +298,8 @@ blockquote span.quote {
     margin:4px auto;
 }
 .mainnavbar div#mainnavbarcenter {
-    width:874px;
+    /*width:874px; with 'vote', without 'leaping' */
+    width: 918px;
     overflow:auto;
     margin:0px auto;
 }
@@ -373,12 +379,6 @@ blockquote span.quote {
     overflow:hidden;
     color:transparent;
 }
-.mainnavbar_is_static > div > a {
-    display:inline-block;
-    float:left;
-    border-radius:100%;
-    margin:0px 5px;
-}
 .mainnavbar_is_static > div > a > div.steam {
     background-image:url(../img/UI/steam-Icon.png);
 }
@@ -397,56 +397,61 @@ blockquote span.quote {
     transform:rotate(30deg);
     background-color:#FFF;
 }
-.mainnavbar_is_static > a > button {
+.mainnavbar_is_static > div.profilebuttons{
+    transition-duration:0.2s;
     position:absolute;
-    border-radius:3px;
-    font-family:Arial;
-    font-size:0.6em;
+    top: 15px;
+    right: 0px;
 }
-.mainnavbar_is_static > a > button.mainbar_static_button_is_sticky,
-.mainnavbar_is_static > a > button.mainbar_static_button_is_sticky{
+.mainnavbar_is_static #mainnavbarcenter a {
+    display:inline-block;
+    float:left;
+    margin:0px 5px;
+}
+.mainnavbar_is_static a > button {
+    border-radius:3px;
+    font-family:"Arial";
+    font-size:0.6em;
+    display:inline-block;
+    float:left;
+    margin:0px;
+}
+.mainnavbar_is_static > div.profilebuttons.mainbar_static_button_is_sticky{ 
     position:fixed;
     top:5px;
     z-index:100;
 }
-.mainnavbar_is_static > a > button:hover {
+.mainnavbar_is_static a > button:hover {
     box-shadow:none;
 }
-.mainnavbar_is_static > a .signup {
-    right:15px;
-    top:15px; 
+.mainnavbar_is_static a > .signup, .mainnavbar_is_static a > .login {
+    margin-right:15px;
 }
-.mainnavbar_is_static > a .login {
-    top:15px;
-    right:75px;
-}
-.mainnavbar_is_static > a .profile {
-    right:103px;
-    top:15px;
+.mainnavbar_is_static a > .profile {
     border-top-right-radius:0px;
     border-bottom-right-radius:0px;
 }
-.mainnavbar_is_static > a .logout {
-    top:15px;
-    right:15px;
+.mainnavbar_is_static a > .logout {
+    margin-right:15px;
 }
-.mainnavbar_is_static > a .notifications_desktop {
-    right:81px;
-    top:15px;
+.mainnavbar_is_static a > .notifications_desktop {
     border-top-left-radius:0px;
     border-bottom-left-radius:0px;
+    margin-right:14px;
+    position:relative;
+    right:1px;
 }
 .notifications_desktop_display::-webkit-scrollbar {
     width: 10px;
     background-color: rgba(0,0,0,0);
-    -webkit-border-radius: 100px;
+    border-radius: 100px;
 }
 .notifications_desktop_display::-webkit-scrollbar:hover {
     background-color: rgba(0, 0, 0, 0.09);
 }
 .notifications_desktop_display::-webkit-scrollbar-thumb:vertical {
     background: rgba(0,0,0,0.5);
-    -webkit-border-radius: 100px;
+    border-radius: 100px;
     box-shadow: 0px 0px 5px -2px rgba(0, 0, 0, 0.50);
 }
 .notifications_desktop_display {
@@ -468,6 +473,11 @@ blockquote span.quote {
     border-bottom:1px solid rgb(200, 200, 200);
     display:block;
 }
+.notifications_desktop_display > span > span {
+    font-style: italic;
+    font-size: 0.8em;
+    display: block;
+}
 .notifications_desktop_display button {
     font-size: 1em;
     font-family: arial;
@@ -480,6 +490,12 @@ blockquote span.quote {
 .notifications_desktop_display > span.body {
     margin: 0px;
     padding-top: 0px;
+}
+.notifications_desktop_display > span.body a, .notifications_desktop_display > span.head a, .alert a {
+    color:#FFE800;
+}
+.notifications_desktop_display > span.body a:hover, .notifications_desktop_display > span.head a:hover, .alert a:hover {
+    color:#FFAE00;
 }
 .notifications_desktop_display > span.head {
     padding-bottom: 0px;
@@ -819,6 +835,7 @@ body {
     -webkit-font-smoothing:antialiased;
     font-smoothing:antialiased;
     font-smooth: always;
+    cursor:pointer;
 }
 #server_container > div[class] h1 {
     line-height:1.2em;
@@ -849,7 +866,7 @@ body {
     width: 30%;
     color:black;
 }
-#server_container > div.AS2 h1 {
+#server_container > div.AS2 h1{
     line-height: 4em;
     margin-bottom: 50px;
 }
@@ -1048,4 +1065,15 @@ div.landing.showcase {
     font-size: 1.3em;
     border:none;
     text-transform: none;
+}
+/* LEAPING TIGER */
+.leaping-tiger {
+    padding:5px;
+    background-color:#FF5F00;
+}
+.leaping-tiger iframe {
+    display:block;
+    height:700px;
+    overflow-y:auto;
+    border-radius:5px;
 }

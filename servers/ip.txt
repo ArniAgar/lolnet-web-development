@@ -10,7 +10,7 @@
 [Lobby2=lolnet.co.nz]
 [LolnetLobby=lolnet.co.nz]
 [MobArena=lolnet.co.nz]
-[Mumble=mumble.lolnet.co.nz ]
+[Mumble=mumble.lolnet.co.nz:64738]
 [Resurrection=lolnet.co.nz]
 [Skyblock=lolnet.co.nz]
 [skyfactory=sf.lolnet.co.nz]
