@@ -38,6 +38,7 @@ html {
 }
 iframe {
     width:100%;
+    height:100%;
 }
 .alert {
     position: fixed;
@@ -254,11 +255,11 @@ blockquote span.quote {
     background-size:54px;
     background-repeat:no-repeat;
     background-image:url(../images/lolnetlogo.png);
-    background-position:-webkit-calc(50% - 472px) 40px;
-    background-position:-moz-calc(50% - 472px) 40px;
-    background-position:-ms-calc(50% - 472px) 40px;
-    background-position:-o-calc(50% - 472px) 40px;
-    background-position:calc(50% - 472px) 40px;
+    background-position:-webkit-calc(50% - 458px) 40px;
+    background-position:-moz-calc(50% - 458px) 40px;
+    background-position:-ms-calc(50% - 458px) 40px;
+    background-position:-o-calc(50% - 458px) 40px;
+    background-position:calc(50% - 458px) 40px;
     overflow:visible;
     position:absolute;
     -webkit-font-smoothing:antialiased;
@@ -337,11 +338,11 @@ blockquote span.quote {
     border-radius:0px;
     background-repeat:no-repeat;
     background-color:rgba(45, 45, 45, 0.46);
-    background-position:-webkit-calc(50% - 472px) 2px;
-    background-position:-moz-calc(50% - 472px) 2px;
-    background-position:-ms-calc(50% - 472px) 2px;
-    background-position:-o-calc(50% - 472px) 2px;
-    background-position:calc(50% - 472px) 2px;
+    background-position:-webkit-calc(50% - 458px) 2px;
+    background-position:-moz-calc(50% - 458px) 2px;
+    background-position:-ms-calc(50% - 458px) 2px;
+    background-position:-o-calc(50% - 458px) 2px;
+    background-position:calc(50% - 458px) 2px;
     float:left;
     transition-duration:0.25s;
 }
@@ -473,6 +474,7 @@ blockquote span.quote {
     display:block;
 }
 .notifications_desktop_display > span > span {
+    font-style: italic;
     font-size: 0.8em;
     display: block;
 }
@@ -489,10 +491,10 @@ blockquote span.quote {
     margin: 0px;
     padding-top: 0px;
 }
-.notifications_menu > span a, .alert a {
+.notifications_desktop_display > span.body a, .notifications_desktop_display > span.head a, .alert a {
     color:#FFE800;
 }
-.notifications_menu > span a:hover, .alert a:hover {
+.notifications_desktop_display > span.body a:hover, .notifications_desktop_display > span.head a:hover, .alert a:hover {
     color:#FFAE00;
 }
 .notifications_desktop_display > span.head {
@@ -993,9 +995,6 @@ div.landing.showcase {
     right:0px;
     background-image:url(../img/UI/arrow-right.png);
 }
-#server_container > div.serveritemwidth_1220 {
-    width: calc(100% / 3 - 4px);
-}
 /* HEADING SLIDER */
 #headslides > * {
     width:100%;
@@ -1072,34 +1071,9 @@ div.landing.showcase {
     padding:5px;
     background-color:#FF5F00;
 }
-.leaping-tiger > iframe, .leaping-tiger > object {
+.leaping-tiger iframe {
     display:block;
     height:700px;
-    width:100%;
     overflow-y:auto;
     border-radius:5px;
-}
-iframe[src="../404/404.html"] {
-    min-height:256px;
-}
-.page_error_404 {
-    margin:0px auto;
-}
-.page_error_404 > div{
-    font-family:"Raleway", "Gill Sans", "Century Gothic", "Myriad Pro", "Arial";
-    background-image:url(../img/UI/error_404_sad.png);
-    background-size:256px;
-    background-repeat:no-repeat;
-    padding-left:270px;
-    min-height:216px;
-    margin:0px auto;
-    width:400px;
-    padding-top:40px;
-}
-.page_error_404 p {
-    margin:0px;
-    font-size:1.2em;
-}
-.page_error_404 h1 {
-    margin:0px 0px 10px 0px;
 }
