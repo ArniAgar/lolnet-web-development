@@ -1,5 +1,5 @@
 /*mobile_css*/
-h2 {line-height: 1em;}
+h2 {line-height:1em;}
 button {transition-duration:0s;}
 .landing {
     padding:5%;
@@ -68,21 +68,21 @@ blockquote span.text {
     background-position:left center;
 }
 .mainnavbar_focus > div > a > div > button {
-    font-size: 1em;
-    font-family: arial;
-    vertical-align: baseline;
-    border-radius: 3px;
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-image: url(../img/UI/switch.png);
-    background-size: cover;
-    color: transparent;
-    background-color: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 215, 68, 0.66);
+    font-size:1em;
+    font-family:arial;
+    vertical-align:baseline;
+    border-radius:3px;
+    background-repeat:no-repeat;
+    background-position:left center;
+    background-image:url(../img/UI/switch.png);
+    background-size:cover;
+    color:transparent;
+    background-color:rgba(255, 255, 255, 0.15);
+    border:1px solid rgba(255, 215, 68, 0.66);
     margin:0px 5px;
 }
 .mainnavbar_focus > div > a > div > button:hover {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color:rgba(255, 255, 255, 0.15);
 }
 .mainnavbar_focus > div > a > div > button.switched {
     background-position:right center;
@@ -132,6 +132,7 @@ blockquote span.text {
     bottom:0px;
     border-bottom:none;
     overflow:hidden;
+    overflow-y:auto;
     transition-duration:0.25s;
 }
 .notifications_menu > span {
@@ -143,16 +144,20 @@ blockquote span.text {
     margin-top:10px;
 }
 .notifications_menu > span.body {
-    margin: 0px;
-    padding-top: 0px;
+    margin:0px;
+    padding-top:0px;
+}
+.notifications_menu > span.body > span {
+    display:block;
+    font-size:0.8em;
 }
 .notifications_menu > span.head {
-    padding-bottom: 5px;
+    padding-bottom:5px;
     border-bottom:none;
-    font-size: 5em;
-    font-family: rez;
-    border-top: 1px solid rgb(200, 200, 200);
-    font-weight: 200;
+    font-size:5em;
+    font-family:"Raleway", "Gill Sans", "Century Gothic", "Myriad Pro", "Arial";
+    border-top:1px solid rgb(200, 200, 200);
+    font-weight:bold;
 }
 div.notifications_menu_is_open {
     border-bottom:15px solid rgb(79, 79, 79);
@@ -209,53 +214,49 @@ div.landing img, button:hover {
     box-shadow:none;
 }
 /*serverlist*/
-.lserverlist > div.mainservers > div {
-    width: auto;
-    display: block;
-    text-align:left;
-    line-height:1.1em;
-    padding:0px 15px;
+#server_container div {
+    display:block;
+    width:100%;
+    transition-duration:0s;
+    border-radius:0px;
+    float:left;
+    font-weight:bold;
 }
-.lserverlist > div.mainservers > div h2 {
-    text-align:center;
+#server_container > div[class] > h1 {
+    line-height:1.2em;
+    margin:30px 0px;
 }
-#server_container > div[class] span.server_online, #server_container > div[class] span.server_offline {
-    width: 100px;
-}
-#server_container > div[class] span.Serveronline {
-    top:0px;
-}
-#server_container > div[class] span {
-    width: 100%;
-}
+#server_container div:hover {transform:none;}
+#server_container div:active {box-shadow:0px 0px transparent;}
+/*end serverlist*/
 div.footer button {
-    text-transform: uppercase;
-    font-size: 2em;
-    width: 100%;
+    text-transform:uppercase;
+    font-size:2em;
+    width:100%;
     max-width:100%;
 }
 .lserverlist > div > div:hover {
-    box-shadow: none;
+    box-shadow:none;
 }
 .notification_forum {
-    font-size: 2em;
-    margin: 20px 10% 0px;
-    text-align: center;
-    display: inline-block;
-    width: 80%;
+    font-size:2em;
+    margin:20px 10% 0px;
+    text-align:center;
+    display:inline-block;
+    width:80%;
 }
 .donate table.showcase {min-width:0px;}
 .donate table.showcase td {display:block;}
 .donate .coinstable {
-    margin: 10px -35px;
-    width: 100%;
+    margin:10px -35px;
+    width:100%;
 }
 .donate .coinstable td {padding:5px;}
 .donate .coinstable td:first-child {
     height:100px;
 }
 .donate .coinstable td h2 {
-    transform: rotate(-90deg);
+    transform:rotate(-90deg);
 }
 .donate .coinstable tr:nth-child(3) > td:first-child {
     height:80px;
@@ -270,4 +271,4 @@ div.footer button {
     display:none;
 }
 .leaping-tiger {padding:0px;background-color:#F0F0F0;}
-.leaping-tiger iframe{border-radius:0px;}
+.leaping-tiger > iframe, .leaping-tiger > object{border-radius:0px;}
