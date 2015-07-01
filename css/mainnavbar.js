@@ -54,12 +54,17 @@ function serverstatusfiller(ele) {//legacy
     ele.src = '../img/FullServers.png';
 }
 $(document).ready(function() {
+    if ($('.jswarning')) {
+        $('.jswarning').remove();
+    }
+});
+$(document).ready(function() {
     var pageheaderhtml = $('#page-header').html();
     $('#page-header').html(pageheaderhtml + '<span class="alert"><div class="fullscreenoverlay hideme"></div><span class="heading"></span><span class="contents"></span><span class="foot"></span></span>'
                           + '<span class="notifications_buffer0" style="display:none;"></span>'
                           + '<span class="notifications_buffer1" style="display:none;"></span>'
                           );
-    $('.serverlist_IP_buffer').load('../servers/ip.txt');
+    if ($('.serverlist_IP_buffer')) {$('.serverlist_IP_buffer').load('../servers/ip.txt');}
     var x = document.createElement('link');
     x.rel = 'icon';
     x.type = 'image/x-icon';
@@ -138,7 +143,7 @@ $(document).ready(function () {
     }
     document.onscroll = scroll;
     // Magic Line
-    window.setTimeout(function(){
+    window.setTimeout(function () {
         var $el, leftPos, newWidth, $mainNav = $(".mainnavbar");
         $mainNav.append("<div id='magic-line'></div>");
         var $magicLine = $("#magic-line");
@@ -164,29 +169,32 @@ $(document).ready(function () {
                 width: $magicLine.data("origWidth")
             });
         });
-    }, 10);
+    }, 100);
     //blockquotes
-    var bq = $('blockquote');
-    var bqtxt = bq.text();
-    bq.html('<span class="quote"></span><span class="text">' + bqtxt + '</span>');
+    if ($('blockquote')) {
+        var bq = $('blockquote'), bqtxt = bq.text();
+        bq.html('<span class="quote"></span><span class="text">' + bqtxt + '</span>');
+    }
     //Header slider
-    var pa = document.getElementsByClassName('slider')[0].children, i = 0, b = null, pal = pa.length;
-    window.setInterval(function () {
-        if (i === 0) {
-            b = pal - 1;
-            pa[b].style.width = '';
-            pa[i].style.width = '100%';
-            i = i + 1;
-        } else if (i === pal) {
-            b = pal - 1;
-            i = 0;
-        } else {
-            b = i - 1;
-            pa[b].style.width = '';
-            pa[i].style.width = '100%';
-            i = i + 1;
-        }
-    }, 4000);
+    if ($('.slider')) {
+        var pa = document.getElementsByClassName('slider')[0].children, i = 0, b = null, pal = pa.length;
+        window.setInterval(function () {
+            if (i === 0) {
+                b = pal - 1;
+                pa[b].style.width = '';
+                pa[i].style.width = '100%';
+                i = i + 1;
+            } else if (i === pal) {
+                b = pal - 1;
+                i = 0;
+            } else {
+                b = i - 1;
+                pa[b].style.width = '';
+                pa[i].style.width = '100%';
+                i = i + 1;
+            }
+        }, 4000);
+    }
     //test for script tag inside of heading slider and format the parent element
     var $element = $('.slider div script').parent('div');
     window.setTimeout(function() {
@@ -207,7 +215,7 @@ $(document).ready(function () {
                 window.setTimeout(function() {
                     var b = document.createElement('div'),
                         c = document.createElement('div'),
-                        d = document.createElement('div'),
+                        d = document.createElement('a'),
                         x = document.createElement('link');
                     x.rel = 'stylesheet';
                     x.type = 'text/css';
@@ -216,20 +224,17 @@ $(document).ready(function () {
                     x.setAttribute('onerror', 'pathup(this)');
                     b.className = 'mainmenu_button';
                     b.setAttribute('onclick', 'menu_is_focused()');
-                    b.innerHTML = 'Menu';
                     c.className = 'notifications_button';
                     c.setAttribute('onclick', 'menu_notification()');
-                    c.title = 'Notifications';
                     c.innerHTML = '!';
-                    d.className = 'announcements_button';
-                    d.setAttribute('onclick', '');
-                    d.title = 'Announcements';
-                    d.innerHTML = '<))';
+                    d.href = '/';
+                    d.className = 'mobile_logo';
                     document.getElementById('headerbutton_container').appendChild(b);
-                    document.getElementById('headerbutton_container').appendChild(c);
                     document.getElementById('headerbutton_container').appendChild(d);
+                    document.getElementById('headerbutton_container').appendChild(c);
                     document.getElementsByTagName('head')[0].appendChild(x);
-                    $('.mainmenu_button').html('<span>Menu</span>');
+                    $('.mobile_logo').html('<div></div>');
+                    $('.mainmenu_button').html('<span></span>');
                     var mainnav = $('#headerbutton_container').height();
                     $('.mainnavbar_is_static').hide();
                     $('.mainnavbarfiller').hide();
@@ -339,12 +344,18 @@ function menu_is_focused() {
 $(document).ready(function() {
     //Notifications Loader
     window.setTimeout(function(){
-        $('.notifications_buffer0').load('../ucp.html .linklist.bulletin', function () {
+        var doc_location = '';
+        var pathname = window.location.pathname;
+        var hostname = window.location.hostname; 
+        if (pathname === hostname || '/Volumes/NO%20NAME/lolnet.co.nz/LOLNET/www.lolnet.co.nz/index-3.html' || 'G:/lolnet.co.nz/LOLNET/www.lolnet.co.nz/index-3.html') { doc_location = './'; }//the two strings are for testing
+        else { doc_location = '../'; }
+        console.log('doc_location: ' + doc_location + '\npathname: ' + pathname);
+        $('.notifications_buffer0').load(doc_location + 'ucp.html .linklist.bulletin', function () {
             notifications_count = $('#notification_list_button strong').text() * 1 + $notification_number;
             pm_count = $('.icon-pm strong').text() * 1;
             $notifications_count = pm_count + notifications_count;
             $('.notifications_desktop').text($notifications_count);
-            $('.notifications_buffer1').load('../ucp.html .dropdown-contents ul li', function() {
+            $('.notifications_buffer1').load(doc_location + 'ucp.html .dropdown-contents ul li', function() {
                 $('.notifications_buffer1 img').remove();
                 var notifications_count = $('#notification_list_button strong').text() * 1;
                 for (i=0;i<notifications_count;i++) {
@@ -578,25 +589,28 @@ function check_serverinfocleaner() {
     }
 }
 $(document).ready(function () {
-    functionone = 0;
-    functiontwo = 0;
-    for (i=0;i<showcase_serverlist.length;i++) {
-        var showcase_server_list = showcase_serverlist[i].replace(/[\. ,:-]+/g, "");
-        var showcase_URIserver_list = showcase_serverlist[i].replace(/ /g, "%20");
-        var showcase_$html = $('#showcase_inner').html();
-        var showcase_import_URI = '../servers/' + showcase_URIserver_list + '.txt';
-        $('#showcase_inner').html(showcase_$html + '<div class="showcase' + showcase_server_list + '"></div>');
-        functionone++;
-        check_serverloader();
-    }
-    for (i=0;i<serverlist.length;i++) {
-        var server_list = serverlist[i].replace(/[\. ,:-]+/g, "");
-        var URIserver_list = serverlist[i].replace(/ /g, "%20");
-        var $html = $('#server_container').html();
-        var import_URI = '../servers/' + URIserver_list + '.txt';
-        $('#server_container').html($html + '<div class="' + server_list + '"></div>');
-        functiontwo++;
-        check_serverloader();
+    var loc = window.location.pathname, loc_isserver = loc.indexOf("servers") > -1;
+    if (loc_isserver === true) {
+        functionone = 0;
+        functiontwo = 0;
+        for (i=0;i<showcase_serverlist.length;i++) {
+            var showcase_server_list = showcase_serverlist[i].replace(/[\. ,:-]+/g, "");
+            var showcase_URIserver_list = showcase_serverlist[i].replace(/ /g, "%20");
+            var showcase_$html = $('#showcase_inner').html();
+            var showcase_import_URI = '../servers/' + showcase_URIserver_list + '.txt';
+            $('#showcase_inner').html(showcase_$html + '<div class="showcase' + showcase_server_list + '"></div>');
+            functionone++;
+            check_serverloader();
+        }
+        for (i=0;i<serverlist.length;i++) {
+            var server_list = serverlist[i].replace(/[\. ,:-]+/g, "");
+            var URIserver_list = serverlist[i].replace(/ /g, "%20");
+            var $html = $('#server_container').html();
+            var import_URI = '../servers/' + URIserver_list + '.txt';
+            $('#server_container').html($html + '<div class="' + server_list + '"></div>');
+            functiontwo++;
+            check_serverloader();
+        }
     }
 });
 function all_serverinfocleaner() {
@@ -680,7 +694,7 @@ function all_serverinfocleaner() {
                     } else {
                         if (document.getElementsByClassName('alert')[0]) {
                             $('.alert .heading').html(serverlist_name_array[i]);
-                            $('.alert .contents').html('IP connect: ' + serverlist_ip_array[i] + '<br><span class="troubleshooting">Trouble connecting? Check the servers online status. You may need to refresh this page to update the server status. You can also try to get help in the <a href="/forum/viewforum.php?f=133">forum</a>.</span>');
+                            $('.alert .contents').html('IP connect: ' + serverlist_ip_array[i] + '<br><span class="troubleshooting">Trouble connecting? Download the official <a href="http://anderson.lolnet.co.nz:8081/job/LolnetLauncherBootstrap/lastSuccessfulBuild/artifact/target/LolnetLauncher.jar">Lolnet launcher</a>. Check the servers online status. You may need to refresh this page to update the server status. You can also try to get help in the <a href="/forum/viewforum.php?f=133">forum</a>.</span>');
                             $('.alert .foot').html('<button class="hideme">okay</button>');
                             var elementheighthalf = $('.alert').height() / 2;
                             var elementwidthhalf = $('.alert').width() / 2;
@@ -691,7 +705,7 @@ function all_serverinfocleaner() {
                             $('.alert').show();
                             $('.hideme').click(function () {$('.alert').hide();});
                         } else {
-                            window.alert('Server: ' + serverlist_name_array[i] + '\nIP connect: ' + serverlist_ip_array[i] + '\nTrouble connecting? Check the servers online status. You may need to refresh this page to update the server status. You can also try to get help in the forum. https://lolnet.co.nz/forum/viewforum.php?f=133');
+                            window.alert('Server: ' + serverlist_name_array[i] + '\nIP connect: ' + serverlist_ip_array[i] + '\nTrouble connecting? Download the official Lolnet launcher. Check the servers online status. You may need to refresh this page to update the server status. You can also try to get help in the forum. https://lolnet.co.nz/forum/viewforum.php?f=133');
                         }
                     }
                 }

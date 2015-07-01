@@ -1,5 +1,5 @@
 /*begin global*/
-* {text-rendering:optimizeLegibility;}
+ {text-rendering:optimizeLegibility;}
 @font-face {
 	font-family:'Raleway';
 	src:url('../font/Raleway%20Thin.ttf');
@@ -27,6 +27,10 @@
 @font-face {
 	font-family:'KeepCalm';
 	src:url('../font/KeepCalm-Medium.ttf');
+}
+@font-face {
+	font-family:'imagine';
+	src:url('../font/imagine_font.otf'), url('../font/imagine_font.otf');
 }
 /*end global*/
 html, body, div, iframe {
@@ -90,6 +94,9 @@ iframe {
     overflow:auto;
     border-top:1px solid #434343;
     z-index: 1;
+}
+.alert button:active {
+    box-shadow: inset 0px 4px 5px -5px black;
 }
 .alert .foot button {
     float:right;
