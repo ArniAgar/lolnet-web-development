@@ -30,7 +30,11 @@
 }
 @font-face {
 	font-family:'imagine';
-	src:url('../font/imagine_font.otf'), url('../font/imagine_font.otf');
+	src:url('../font/imagine_font.otf'), url('../font/imagine_font.ttf');
+}
+@font-face {
+	font-family:'Quicksand';
+	src:url('../font/Quicksand_Book.otf'), url('../font/Raleway%20Thin.ttf');
 }
 /*end global*/
 html, body, div, iframe {
@@ -82,6 +86,7 @@ iframe {
     font-size:1.2em;
     padding:5px 10px;
     z-index: 1;
+    overflow:auto;
 }
 .alert .contents span.troubleshooting{
     font-size: 0.7em;
@@ -145,6 +150,7 @@ iframe {
     line-height:1.2em;
     color:white;
     text-align:justify;
+    overflow:auto;
 }
 .l1 {background-color:rgb(244, 139, 64);}
 .l2 {
@@ -171,7 +177,7 @@ iframe {
     box-shadow:0px 11px 7px -8px rgba(0,0,0,0.65);
 }
 .l4 {background-color:rgb(234, 66, 215);}
-.l5 {background-color:rgb(242, 99, 99);font-size:2em;}
+.l5 {background-color:rgb(242, 99, 99);}
 .l6 {background-color:rgb(66, 98, 234);}
 .l7 {background-color:rgb(234, 66, 215);}
 .l8 {background-color:rgb(237, 169, 90);}
@@ -305,7 +311,7 @@ blockquote span.quote {
 }
 .mainnavbar div#mainnavbarcenter {
     /*width:874px; with 'vote', without 'leaping' */
-    width: 918px;
+    width: 930px;
     overflow:auto;
     margin:0px auto;
 }
@@ -1036,44 +1042,114 @@ div.landing.showcase {
 }
 .serverlist_IP_buffer {display:none;}
 /* CREW PAGE */
+.alert_bio {float:right;width:180px;height:160px;border:1px solid #434343;background-position:center;background-size:200px;margin-left:3px;transition-duration:0.25s;}
+.alert_bio:hover {background-size:230px;}
+.bio_button_placeholder {
+    display:block;
+    width:400px;
+    margin:30px auto 0px auto;
+    border-top:1px solid white;
+    border-bottom:1px solid white;
+    overflow:auto;
+}
+.bio_button_placeholder > button {
+    display:block;
+    width:50%;
+    box-sizing: border-box;
+    float:left;
+    border:none;
+}
+.bio_button_placeholder > button:hover {
+    background-color:rgba(248, 248, 248, 0.3);
+    color:#2d2d2d;
+}
+.bio_button_placeholder > button:active {
+    background-color:rgb(248, 248, 248);
+    color:#2d2d2d;
+}
+.bio_container {
+    overflow:hidden;
+    padding: 20px 0px;
+    box-shadow: 0px 40px 60px -60px #000, 0px -30px 60px -60px #000;
+    border-bottom:1px solid white;
+    border-top:1px solid white;
+    box-shadow: 0px 100px 90px -110px #000;
+}
+.bio_container > div {
+    width:auto;
+    height:350px;
+}
 .bio {
-    font-size: 0.4em;
     font-family:"Verdana", "Helvetica", "Arial", sans-serif;
     border: 1px solid white;
-    padding: 15px;
-    border-radius: 50px;
     overflow: hidden;
-    margin: 15px 0px;
-}
-.bio:nth-child(odd) img {
+    margin: 5px;
+    display:inline-block;
+    background-size:cover;
+    background-position:center center;
+    width: 270px;
+    height: 340px;
+    position:relative;
     float:left;
+    box-sizing:border-box;
 }
-.bio:nth-child(even) img {
-    float:right;
+.bio button {
+    display:block;
+    width:100%;
+    box-sizing: border-box;
+    border:none;
+    border-top:1px solid white;
+    position: absolute;
+    bottom:0px;
+    background-color:rgba(0, 0, 0, 0.32);
+}
+.bio button:hover {
+    display:block;
+    width:100%;
+    box-sizing: border-box;
+    border:none;
+    border-top:1px solid white;
+    position: absolute;
+    bottom:0px;
+    background-color:white;
 }
 .bio div{
-    line-height: 1.2em; 
+    font-size: 0.4em;
+    line-height: 1.2em;
+    margin-top:50px;
 }
-.bio:nth-child(even) div > h2, .bio:nth-child(even) div > h3 {
-    text-align: right;
+.bio div > * > span {
+    background-color:rgba(45, 45, 45, 0.53);
+}
+.bio div > h3 > span {
+    background-color: #919191;
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 0px 10px;
+    box-shadow: inset 0px 5px 5px rgba(255, 255, 255, 0.4);
+}
+.bio div > h3 > span.Administrator {background-color: #9C3232;}
+.bio div > h3 > span.Owner {background-color: #659C32;}
+.bio div > h3 > span.Developer, .bio div > h3 > span.Dev, .bio div > h3 > span.Designer {background-color: #433398;}
+.bio div > h2, .bio div > h3 {
+    padding: 0px 15px;
 }
 .bio div > h2 {
-    line-height: 1em;
+    line-height: 1.2em;
     color:white;
     font-family:"Raleway", "Gill Sans", "Century Gothic", "Myriad Pro", "Arial";
-    font-size: 2.3em;
     font-weight:bold;
-    margin: 0px 0px 2px 0px;
+    margin: 15px 0px 2px 0px;
 }
 .bio div > h3 {
     line-height: 1em;
     margin: 0px 0px 10px 0px;
     color:white;
     font-family:"Raleway", "Gill Sans", "Century Gothic", "Myriad Pro", "Arial";
-    font-size: 1.3em;
     border:none;
     text-transform: none;
 }
+/* END CREW PAGE */
 /* LEAPING TIGER */
 .leaping-tiger {
     padding:5px;
@@ -1110,3 +1186,4 @@ iframe[src="../404/404.html"] {
 .page_error_404 h1 {
     margin:0px 0px 10px 0px;
 }
+.history_lolnet p {font-family:"Quicksand";font-size:0.5em;}

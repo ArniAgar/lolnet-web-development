@@ -713,3 +713,85 @@ function all_serverinfocleaner() {
         });
     }, 2000);
 }
+$(document).ready(function () {
+    //load up index.txt
+    //Staff bios program
+    if ($('.bio_buffer')) {
+        $('.bio_buffer').load('index.txt', function() {
+            animation = 'complete';
+            var $bu = $('.bio_buffer');
+            $bu.text($bu.text().replace(/\[crew\]/g, '<div class="bio"><div>'));
+            $bu.text($bu.text().replace(/\[\/crew\]/g, '\</div><button>Read More</button></div>'));
+            $bu.text($bu.text().replace(/\[name\]/g, '\<h2><span>'));
+            $bu.text($bu.text().replace(/\[\/name\]/g, '\</span></h2>'));
+            $bu.text($bu.text().replace(/\[position\]/g, '<h3><span>'));
+            $bu.text($bu.text().replace(/\[\/position\]/g, '</span></h3>'));
+            $bu.text($bu.text().replace(/\[details\]/g, '<span style="display:none;">'));
+            $bu.text($bu.text().replace(/\[\/details\]/g, '</span>'));
+            $('.bio_container > div').html($bu.text());
+            var el = $('.bio_container > div').children().length * 280 + 'px';
+            $('.bio_container > div').width(el);
+            for (i=0;i<$('.bio_container > div h2 > span').length;i++) {
+                var name = $('.bio_container > div h2 > span:eq('+i+')').text().replace(/\s/g, '');
+                $('.bio_container > div > div:eq('+i+')').addClass(name);
+                $('.bio_container > div > div:eq('+i+')').css({backgroundImage: 'url(../img/crew/'+name+'.jpg)'});
+                var position = $('.bio_container > div h3 > span:eq('+i+')').text();
+                $('.bio_container > div h3 > span:eq('+i+')').addClass(position);
+            }
+            $('.bio_scrollleft').click(function () {
+                if (animation === 'complete') {
+                    animation = 'incomplete';
+                    var left = $('.bio_container > div').css('margin-left');
+                    var leftinitial = left.replace('px', '');
+                    var left = left.replace('px', '') * 1 + 280 + 'px';
+                    if (leftinitial !== '0') {
+                        $('.bio_container > div').animate({'margin-left': left});
+                        window.setTimeout(function(){animation = 'complete';}, 400);
+                    } else { animation = 'complete'; }
+                }
+            });
+            $('.bio_scrollright').click(function () {
+                if (animation === 'complete') {
+                    animation = 'incomplete';
+                    var left = $('.bio_container > div').css('margin-left');
+                    var elecount = ($('.bio_container > div').children().length * 280 - 280) * -1 + '';
+                    var leftinitial = left.replace('px', '');
+                    console.info(elecount);
+                    console.info(leftinitial);
+                    var left = left.replace('px', '') * 1 - 280 + 'px';
+                    if (leftinitial !== elecount) {
+                        $('.bio_container > div').animate({'margin-left': left});
+                        window.setTimeout(function(){animation = 'complete';}, 400);
+                    } else { animation = 'complete'; }
+                }
+            });
+            $('.bio > button').click(function () {
+                if (document.getElementsByClassName('alert')[0]) {
+                    var element =$(this);
+                    var name = element.parent().find('div > h2').text();
+                    var position = element.parent().find('div > h3').text();
+                    var details = element.parent().find('div > span').html().replace(/\n/g, '<br>');
+                    var image_url = element.parent().css('background-image');
+                    $('.alert .heading').html(name);
+                    $('.alert .contents').html('<div class="alert_bio"></div>' + position + '<br><span class="troubleshooting">' + details + '</span>');
+                    $('.alert .contents > div').css({backgroundImage: image_url});
+                    $('.alert .foot').html('<button class="hideme">okay</button>');
+                    var elementheighthalf = $('.alert').height() / 2;
+                    var elementwidthhalf = $('.alert').width() / 2;
+                    $('.alert').css({
+                        top: 'calc(50% - ' + elementheighthalf + 'px)',
+                        left: 'calc(50% - ' + elementwidthhalf + 'px)'
+                    });
+                    $('.alert').show();
+                    $('.hideme').click(function () {$('.alert').hide();});
+                } else {
+                    var element =$(this);
+                    var name = element.parent().find('div > h2 > span').text();
+                    var position = element.parent().find('div > h3').text();
+                    var details = element.parent().find('div > span').text();
+                    window.alert(name + '\n' + position + '\n' + details);
+                }
+            });
+        });
+    }
+});
