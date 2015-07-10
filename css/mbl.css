@@ -22,7 +22,7 @@ blockquote span.text {
     top:0px;
     width:70%;
     height:100%;
-    padding-top:50px;
+    padding-top:38px;
     overflow:hidden;
     background-color:#2D2D2D;
     transition-duration:0.25s;
@@ -31,7 +31,7 @@ blockquote span.text {
     width:0%;
     overflow:hidden;
     height:100%;
-    padding-bottom:50px;
+    padding-bottom:0px;
     display:inline-block;
 }
 .mainnavbar_focus {
@@ -39,7 +39,7 @@ blockquote span.text {
     padding-right:0%;
     background-image:none;
     z-index:10;
-    height:calc(100% - 50px);
+    height:calc(100% - 38px);
     background-color:#2D2D2D;
 }
 .mainnavbar_focus div#mainnavbarcenter {
@@ -297,3 +297,7 @@ div.footer button {
 }
 .leaping-tiger {padding:0px;background-color:#F0F0F0;}
 .leaping-tiger > iframe, .leaping-tiger > object{border-radius:0px;}
+#mainnavbarcenter a[href$=".jar"] > div, #mainnavbarcenter a[href$=".jar"] > div:hover {
+  background-image: none;
+  padding-left: 40px;
+}

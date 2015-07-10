@@ -47,6 +47,14 @@ html {
 iframe {
     width:100%;
 }
+a {color:#FFE800;text-decoration:none;}
+a:hover {color: #FFAE00;}
+.landing h1, .landing h2, .landing h3, .landing h4, .landing span, .landing div {
+    font-family:"Raleway", "Gill Sans", "Century Gothic", "Myriad Pro", "Arial";
+}
+.landing h5, .landing h6 {
+    font-family:"Quicksand", "Raleway", "Gill Sans", "Century Gothic", "Myriad Pro", "Arial";
+}
 .alert {
     position: fixed;
     top: 45%;
@@ -88,7 +96,7 @@ iframe {
     z-index: 1;
     overflow:auto;
 }
-.alert .contents span.troubleshooting{
+.alert .contents span.smalltext{
     font-size: 0.7em;
     font-weight: 100;
 }
@@ -107,6 +115,10 @@ iframe {
     float:right;
     font-size:1em;
     min-width: 110px;
+    margin-right:10px;
+}
+.alert .foot button:nth-child(1) {
+    margin-right:0px;
 }
 .newsocialicons {
 	float:right;
@@ -214,7 +226,7 @@ button:active {
     background-color:#FFF;
     color:black;
     outline:none;
-    box-shadow:none;
+    box-shadow: inset 0px 4px 5px -5px black;
     text-rendering:optimizeLegibility;
 }
 blockquote {
@@ -267,11 +279,11 @@ blockquote span.quote {
     background-size:54px;
     background-repeat:no-repeat;
     background-image:url(../images/lolnetlogo.png);
-    background-position:-webkit-calc(50% - 472px) 40px;
-    background-position:-moz-calc(50% - 472px) 40px;
-    background-position:-ms-calc(50% - 472px) 40px;
-    background-position:-o-calc(50% - 472px) 40px;
-    background-position:calc(50% - 472px) 40px;
+    background-position:-webkit-calc(50% - 487px) 40px;
+    background-position:-moz-calc(50% - 487px) 40px;
+    background-position:-ms-calc(50% - 487px) 40px;
+    background-position:-o-calc(50% - 487px) 40px;
+    background-position:calc(50% - 487px) 40px;
     overflow:visible;
     position:absolute;
     -webkit-font-smoothing:antialiased;
@@ -311,9 +323,19 @@ blockquote span.quote {
 }
 .mainnavbar div#mainnavbarcenter {
     /*width:874px; with 'vote', without 'leaping' */
-    width: 930px;
+    width: 933px;
     overflow:auto;
     margin:0px auto;
+}
+#mainnavbarcenter a[href$=".jar"] > div {
+    background-image:url(../img/UI/download-grey-icon.png);
+    background-size: 12px auto;
+    background-repeat: no-repeat;
+    background-position: left 11px;
+    padding-left: 13px;
+}
+#mainnavbarcenter a[href$=".jar"] > div:hover {
+    background-image:url(../img/UI/download-icon.png);
 }
 .mainnavbar_is_static > div > a > div, .mainnavbar > div > a > div {
     display:inline-block;
@@ -350,11 +372,11 @@ blockquote span.quote {
     border-radius:0px;
     background-repeat:no-repeat;
     background-color:rgba(45, 45, 45, 0.46);
-    background-position:-webkit-calc(50% - 472px) 2px;
-    background-position:-moz-calc(50% - 472px) 2px;
-    background-position:-ms-calc(50% - 472px) 2px;
-    background-position:-o-calc(50% - 472px) 2px;
-    background-position:calc(50% - 472px) 2px;
+    background-position:-webkit-calc(50% - 487px) 2px;
+    background-position:-moz-calc(50% - 487px) 2px;
+    background-position:-ms-calc(50% - 487px) 2px;
+    background-position:-o-calc(50% - 487px) 2px;
+    background-position:calc(50% - 487px) 2px;
     float:left;
     transition-duration:0.25s;
 }
@@ -419,6 +441,7 @@ blockquote span.quote {
     display:inline-block;
     float:left;
     margin:0px 5px;
+    border-radius: 100%;
 }
 .mainnavbar_is_static a > button {
     border-radius:3px;
@@ -656,6 +679,9 @@ body {
     min-width:400px;
     max-width:900px;
 }
+.donate > * {display:none;}
+.donate > div.jswarning {display:block;}
+.donate .coverit{width:100%;z-index:499;position:absolute;left:0px;background-color:rgba(239,239,239,0.5);cursor:help;}
 .donate table.showcase td:first-child, .donate table.showcase td:nth-child(2) {
     border-top:1px solid white;
 }
@@ -806,6 +832,7 @@ body {
 /* M O D E R N   U I */
 .lserverlist {
     padding:60px 0px;
+    font-size: 2em;
 }
 .lserverlist > div {
     margin:0px auto;
@@ -1042,6 +1069,7 @@ div.landing.showcase {
 }
 .serverlist_IP_buffer {display:none;}
 /* CREW PAGE */
+#crew {background-color: rgb(110, 149, 188);}
 .alert_bio {float:right;width:180px;height:160px;border:1px solid #434343;background-position:center;background-size:200px;margin-left:3px;transition-duration:0.25s;}
 .alert_bio:hover {background-size:230px;}
 .bio_button_placeholder {
@@ -1103,15 +1131,14 @@ div.landing.showcase {
     bottom:0px;
     background-color:rgba(0, 0, 0, 0.32);
 }
-.bio button:hover {
-    display:block;
-    width:100%;
-    box-sizing: border-box;
-    border:none;
-    border-top:1px solid white;
-    position: absolute;
-    bottom:0px;
+.bio button:hover, .bio button:active, .bio button:focus {
     background-color:white;
+    color:black;
+    outline:none;
+    text-rendering:optimizeLegibility;
+}
+.bio button:focus {
+    box-shadow: inset 0px 4px 5px -5px black;
 }
 .bio div{
     font-size: 0.4em;
@@ -1187,3 +1214,26 @@ iframe[src="../404/404.html"] {
     margin:0px 0px 10px 0px;
 }
 .history_lolnet p {font-family:"Quicksand";font-size:0.5em;}
+/* ANNOUNCE */
+.announce h2 {
+    line-height: 1em;
+    margin:10px 0px;
+}
+.announce > div {
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
+    transition-duration:0.2s;
+    padding:10px;
+    margin:10px 0px;
+    border-radius:2px;
+}
+.announce > div:hover {
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.14);
+}
+.announce_date {
+    font-size: 0.5em;
+    line-height: 0.9em;
+}
+/* bug submitter */
+.bugsubmit {display:inline-block;position:fixed;bottom:10px;right:10px;background-color:#2d2d2d;padding:7px 10px;border-radius:5px;}

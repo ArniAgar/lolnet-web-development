@@ -63,6 +63,7 @@ $(document).ready(function() {
     $('#page-header').html(pageheaderhtml + '<span class="alert"><div class="fullscreenoverlay hideme"></div><span class="heading"></span><span class="contents"></span><span class="foot"></span></span>'
                           + '<span class="notifications_buffer0" style="display:none;"></span>'
                           + '<span class="notifications_buffer1" style="display:none;"></span>'
+                          + '<span class="bugsubmit"><a href="https://github.com/ladybugman/lolnet-web-development/issues" target="_blank">Submit a bug</a></span>'
                           );
     if ($('.serverlist_IP_buffer')) {$('.serverlist_IP_buffer').load('../servers/ip.txt');}
     var x = document.createElement('link');
@@ -694,7 +695,7 @@ function all_serverinfocleaner() {
                     } else {
                         if (document.getElementsByClassName('alert')[0]) {
                             $('.alert .heading').html(serverlist_name_array[i]);
-                            $('.alert .contents').html('IP connect: ' + serverlist_ip_array[i] + '<br><span class="troubleshooting">Trouble connecting? Download the official <a href="http://anderson.lolnet.co.nz:8081/job/LolnetLauncherBootstrap/lastSuccessfulBuild/artifact/target/LolnetLauncher.jar">Lolnet launcher</a>. Check the servers online status. You may need to refresh this page to update the server status. You can also try to get help in the <a href="/forum/viewforum.php?f=133">forum</a>.</span>');
+                            $('.alert .contents').html('IP connect: ' + serverlist_ip_array[i] + '<br><span class="smalltext">Trouble connecting? Download the official <a href="http://anderson.lolnet.co.nz:8081/job/LolnetLauncherBootstrap/lastSuccessfulBuild/artifact/target/LolnetLauncher.jar">Lolnet launcher</a>. Check the servers online status. You may need to refresh this page to update the server status. You can also try to get help in the <a href="/forum/viewforum.php?f=133">forum</a>.</span>');
                             $('.alert .foot').html('<button class="hideme">okay</button>');
                             var elementheighthalf = $('.alert').height() / 2;
                             var elementwidthhalf = $('.alert').width() / 2;
@@ -721,9 +722,9 @@ $(document).ready(function () {
             animation = 'complete';
             var $bu = $('.bio_buffer');
             $bu.text($bu.text().replace(/\[crew\]/g, '<div class="bio"><div>'));
-            $bu.text($bu.text().replace(/\[\/crew\]/g, '\</div><button>Read More</button></div>'));
-            $bu.text($bu.text().replace(/\[name\]/g, '\<h2><span>'));
-            $bu.text($bu.text().replace(/\[\/name\]/g, '\</span></h2>'));
+            $bu.text($bu.text().replace(/\[\/crew\]/g, '</div><button>Read More</button></div>'));
+            $bu.text($bu.text().replace(/\[name\]/g, '<h2><span>'));
+            $bu.text($bu.text().replace(/\[\/name\]/g, '</span></h2>'));
             $bu.text($bu.text().replace(/\[position\]/g, '<h3><span>'));
             $bu.text($bu.text().replace(/\[\/position\]/g, '</span></h3>'));
             $bu.text($bu.text().replace(/\[details\]/g, '<span style="display:none;">'));
@@ -773,7 +774,7 @@ $(document).ready(function () {
                     var details = element.parent().find('div > span').html().replace(/\n/g, '<br>');
                     var image_url = element.parent().css('background-image');
                     $('.alert .heading').html(name);
-                    $('.alert .contents').html('<div class="alert_bio"></div>' + position + '<br><span class="troubleshooting">' + details + '</span>');
+                    $('.alert .contents').html('<div class="alert_bio"></div>' + position + '<br><span class="smalltext">' + details + '</span>');
                     $('.alert .contents > div').css({backgroundImage: image_url});
                     $('.alert .foot').html('<button class="hideme">okay</button>');
                     var elementheighthalf = $('.alert').height() / 2;
@@ -793,5 +794,59 @@ $(document).ready(function () {
                 }
             });
         });
+    }
+});
+$(document).ready(function () {
+    //load up announcements
+    if ($('.announce_buffer')) {
+        $('.announce_buffer').load('announce.txt', function() {
+            var $bu = $('.announce_buffer');
+            $bu.html($bu.html().replace(/\[item\]/g, '<div>'));
+            $bu.html($bu.html().replace(/\[\/item\]/g, '</div>'));
+            $bu.html($bu.html().replace(/\[item sticky\]/g, '<div class="announce_sticky">'));
+            $bu.html($bu.html().replace(/\[heading\]/g, '<h2><span>'));
+            $bu.html($bu.html().replace(/\[\/heading\]/g, '</span></h2>'));
+            $bu.html($bu.html().replace(/\[announcement\]/g, '<div>'));
+            $bu.html($bu.html().replace(/\[\/announcement\]/g, '</div>'));
+            $bu.html($bu.html().replace(/\[date\]/g, '<div class="announce_date">'));
+            $bu.html($bu.html().replace(/\[\/date\]/g, '</div>'));
+            $bu.html($bu.html().replace(/\[url\]/g, '<a>'));
+            $bu.html($bu.html().replace(/\[\/url\]/g, '</a>'));
+            $bu.html($bu.html().replace(/\[b\]/g, '<b>'));
+            $bu.html($bu.html().replace(/\[\/b\]/g, '</b>'));
+            $bu.html($bu.html().replace(/\[u\]/g, '<u>'));
+            $bu.html($bu.html().replace(/\[\/u\]/g, '</u>'));
+            $bu.html($bu.html().replace(/\[i\]/g, '<i>'));
+            $bu.html($bu.html().replace(/\[\/i\]/g, '</i>'));
+            $bu.html($bu.html().replace(/\[s\]/g, '<strike>'));
+            $bu.html($bu.html().replace(/\[\/s\]/g, '</strike>'));
+            $bu.html($bu.html().replace(/\[image\]/g, '<a><img>'));
+            $bu.html($bu.html().replace(/\[\/image\]/g, '</a>'));
+            $bu.html($bu.html().replace(/\[break\]/g, '<br>'));
+            $('.announce').html($bu.html());
+            for (i=0;i<$('.announce > div a').length;i++) {
+                $('.announce a:eq('+i+')').attr('href', $('.announce a:eq('+i+')').text());
+            }
+            for (i=0;i<$('.announce img').length;i++) {
+                var text = $('.announce img:eq('+i+')').parent('a').text();
+                $('.announce img:eq('+i+')').attr('src', text);
+                $('.announce img:eq('+i+')').parent('a').css({fontSize:'0px'});
+            }
+            var sticky = '<div class="announce_sticky_istop">' + $('.announce .announce_sticky').html() + '</div>';
+            var all = $('.announce').html();
+            $('.announce').html(sticky + all);
+            $('.announce .announce_sticky').remove();
+        });
+    }
+});
+$(document).ready(function () {
+    //fix for anchor links
+    var hash = window.location.hash;
+    if (hash) {
+        window.setTimeout(function () {
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 1000);//scroll time
+        }, 500);//scroll delay
     }
 });

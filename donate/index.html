@@ -78,15 +78,15 @@
             <div class="mainnavbar">
                 <div id="mainnavbarcenter">
                     <a href="http://anderson.lolnet.co.nz:8081/job/LolnetLauncherBootstrap/lastSuccessfulBuild/artifact/target/LolnetLauncher.jar"><div>Lolnet Launcher</div></a>
-                    <a href="../index-3.html"><div>Home</div></a>
-                    <a href="../index-2.html"><div>Forums</div></a>
+                    <a href="/index-3.html"><div>Home</div></a>
+                    <a href="/forum/"><div>Forums</div></a>
                     <a href="http://wiki.lolnet.co.nz/" target="_blank"><div>Wiki</div></a>
-                    <a href="../about-us/index.html"><div>About Us</div></a>
-                    <a href="../memberlist.php?mode=contactadmin"><div>Contact Us</div></a>
-                    <a href="../servers/index.html"><div>Server Status</div></a>
-                    <a href="../search.html"><div>Search</div></a>
-                    <a href="../donate/index.html"><div class="navbardonate current_page_item">Donate</div></a>
-                    <a href="../leaping-tiger/"><div class="navbarleapingtiger">Leaping Tiger</div></a>
+                    <a href="/about-us/"><div>About Us</div></a>
+                    <a href="/forum/memberlist.php?mode=contactadmin"><div>Contact Us</div></a>
+                    <a href="/servers/"><div>Server Status</div></a>
+                    <a href="/forum/search.php"><div>Search</div></a>
+                    <a href="/donate/"><div class="navbardonate current_page_item">Donate</div></a>
+                    <a href="/leaping-tiger/"><div class="navbarleapingtiger">Leaping Tiger</div></a>
                 </div>
             </div>
             <!-- NAV BAR FILLER WHEN NAVBAR IS FIXED -->
@@ -98,8 +98,8 @@
                     <h2>Please enable Javascript in your browser in order to Donate</h2>
                 </div>
 
-                <link rel="stylesheet" href="messi/messi.min.css" />
-                <script src="messi/messi.min.js"></script>
+                <link rel="stylesheet" href="../messi/messi.min.css" />
+                <script src="../messi/messi.min.js"></script>
                 <div class="widthpanel username_input">
                         <h1>Enter your Minecraft Username</h1>
                         <input name="usrname" size="30" type="text" id="usrname" placeholder="Username" value />
@@ -247,11 +247,11 @@
                                     </td>
                                 </tr>
                             </table>
-                            <h2>   Donate via Internet Banking:<br />
+                            <p style="font-size:2em;">   Donate via Internet Banking:<br />
                                 lolnet<br />
-                                06-0996-0568084-21   </p>
-                            </h2>
-                            <h2>Please make sure to include your Minecraft Username in Paypal or anywhere in the Reference fields for internet banking!</h2>
+                                06-0996-0568084-21
+                            </p>
+                            <p style="font-size:2em;">Please make sure to include your Minecraft Username in Paypal or anywhere in the Reference fields for internet banking!</p>
                             <p>- All ranks last for a maximum of <strong>1 Year</strong> from donation and can be  changed and removed at any time. <br />
                                 - These are donations and we are gifting you perks  so there are no refunds.<br />
                                 - Internet banking can take up to 3 days to process (I know ages right!), this isn't anything that we can speed up.
@@ -408,7 +408,7 @@
                 
                   <p>We also reserve the right to add and remove &quot;perks&quot; as we see fit.</p>
                   <p>Please make sure to add your in game name and email <a href="mailto:donations@lolnet.co.nz">donations@lolnet.co.nz</a>.
-                For a donation via other methods please PM CptWin on the Forums or email <a href="mailto:cptwin@lolnet.co.nz">cptwin@lolnet.co.nz</a>.  </p>
+                For a donation via other methods please PM CptWin on the Forums or email <a href="mailto:cptwin@lolnet.co.nz">cptwin@lolnet.co.nz</a>.</p>
                 
                 </div>
 
@@ -429,11 +429,36 @@
                 }
                 </script>
 
-                   <script>
-                $( document ).ready(function() {
-                new Messi('<p>By clicking accept you are agreeing to lolnet\'s <a href="http://wiki.lolnet.co.nz/index.php?title=Donation_Terms_and_Conditions" target="_blank">Donation Terms and Conditions</a></p><p><a href="http://wiki.lolnet.co.nz/index.php?title=Donation_Terms_and_Conditions" target="_blank">http://wiki.lolnet.co.nz/index.php?title=Donation_Terms_and_Conditions</a></p>', {title: 'Donation Terms and Conditions', titleClass: 'anim warning', modal: true, center: true, buttons: [{id: 0, label: 'Accept', val: 'Y', class: 'btn-success'}, {id: 1, label: 'Decline', val: 'N', class: 'btn-danger'}], callback: function(val) { if (val == "N") { window.location.href = 'index.html';}}});
-                });
-                </script>
+                    <script type="text/javascript">/*
+                $(document).ready(function () {
+                    new Messi('<p>By clicking accept you are agreeing to lolnet\'s <a href="http://wiki.lolnet.co.nz/index.php?title=Donation_Terms_and_Conditions" target="_blank">Donation Terms and Conditions</a></p><p><a href="http://wiki.lolnet.co.nz/index.php?title=Donation_Terms_and_Conditions" target="_blank">http://wiki.lolnet.co.nz/index.php?title=Donation_Terms_and_Conditions</a></p>', {title: 'Donation Terms and Conditions', titleClass: 'anim warning', modal: true, center: true, buttons: [{id: 0, label: 'Accept', val: 'Y', class: 'btn-success'}, {id: 1, label: 'Decline', val: 'N', class: 'btn-danger'}], callback: function(val) { if (val == "N") { window.location.href = 'index.html';}}});
+                });*/
+                        $('.donate > *').show();
+                        $('.alert .heading').html('Lolnet Agreement');
+                        $('.alert .contents').html('<span class="smalltext">By clicking accept you are agreeing to lolnet\'s <a href="http://wiki.lolnet.co.nz/index.php?title=Donation_Terms_and_Conditions" target="_blank">Donation Terms and Conditions</a>. <a href="http://wiki.lolnet.co.nz/index.php?title=Donation_Terms_and_Conditions" target="_blank">http://wiki.lolnet.co.nz/index.php?title=Donation_Terms_and_Conditions</a></span>' + '<br><span class="smalltext">This page is in beta test. Behaviour may not be as expected. Awaiting review from senior development team. Please be patient - in the meantime, use the old donation system.</span>');
+                        $('.alert .foot').html('<button class="declined">Decline</button><button class="accepted">Accept</button>');
+                        var elementheighthalf = $('.alert').height() / 2;
+                        var elementwidthhalf = $('.alert').width() / 2;
+                        $('.alert').css({
+                            top: 'calc(50% - ' + elementheighthalf + 'px)',
+                            left: 'calc(50% - ' + elementwidthhalf + 'px)'
+                        });
+                        $('.alert').show();
+                        $('.accepted').click(function () {$('.alert').hide();});
+                        $('.declined').click(function () {
+                            if (document.getElementsByClassName('coverit')[0]) {
+                                 var initialhtml = null;
+                            } else {
+                            var initialhtml = $('.donate').html();
+                                $('.donate').html('<span class="coverit"></span>' + $('.donate').html());
+                                $('.donate .coverit').height($('.donate').height());
+                                $('.alert .contents').html('<span class="smalltext">You have declined. You must accept Lolnet\'s <a href="http://wiki.lolnet.co.nz/index.php?title=Donation_Terms_and_Conditions" target="_blank">Donation Terms and Conditions</a> to donate.<br>To donate, refresh the page and accept the terms and conditions.<br><a href="http://wiki.lolnet.co.nz/index.php?title=Donation_Terms_and_Conditions" target="_blank">http://wiki.lolnet.co.nz/index.php?title=Donation_Terms_and_Conditions</a></span>');
+                                $('.alert .foot').html('<button class="hideme">okay</button>');
+                                $('.hideme').click(function () {$('.alert').hide();});
+                                $('.donate .coverit').click(function () {$('.alert').show();});
+                            }
+                        });
+                    </script>
             </div>
         </div>
         </div>
@@ -448,7 +473,7 @@
                 <h3>Quicklinks</h3>
                 <a href="/servers/"><button>Server Status</button></a><br>
                 <a href="/announce/"><button>Announcements</button></a><br>
-                <a href="/crew/"><button>Crew</button></a>
+                <a href="/about-us/#crew"><button>Crew</button></a>
             </div>
             <div class="f3">
                 <h3>Get to the forums</h3>
