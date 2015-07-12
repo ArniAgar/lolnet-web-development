@@ -26,8 +26,8 @@ The [crew] tag, and all others, must be closed.
 [/crew]
 
 To get an image applied, you must save an image in the crew folder (/img/crew/) and
-name it as [name].jpg - that is the name of the person which will be used inside the
-[name] tag WITHOUT any spaces followed by .jpg. No other file extension is supported.
+name it as [name].jpg or [name].png - that is the name of the person which will be used inside the
+[name] tag WITHOUT any spaces followed by .jpg or .png. No other file extension is supported.
 
 EXAMPLE
 -------

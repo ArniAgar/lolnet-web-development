@@ -63,7 +63,7 @@ $(document).ready(function() {
     $('#page-header').html(pageheaderhtml + '<span class="alert"><div class="fullscreenoverlay hideme"></div><span class="heading"></span><span class="contents"></span><span class="foot"></span></span>'
                           + '<span class="notifications_buffer0" style="display:none;"></span>'
                           + '<span class="notifications_buffer1" style="display:none;"></span>'
-                          + '<span class="bugsubmit"><a href="https://github.com/ladybugman/lolnet-web-development/issues" target="_blank">Submit a bug</a></span>'
+                          + '<span class="bugsubmit"><a href="https://github.com/ladybugman/lolnet-web-development/issues" target="_blank">Submit a bug</a></span>'//bug submitter (remove for actual release)
                           );
     if ($('.serverlist_IP_buffer')) {$('.serverlist_IP_buffer').load('../servers/ip.txt');}
     var x = document.createElement('link');
@@ -735,7 +735,7 @@ $(document).ready(function () {
             for (i=0;i<$('.bio_container > div h2 > span').length;i++) {
                 var name = $('.bio_container > div h2 > span:eq('+i+')').text().replace(/\s/g, '');
                 $('.bio_container > div > div:eq('+i+')').addClass(name);
-                $('.bio_container > div > div:eq('+i+')').css({backgroundImage: 'url(../img/crew/'+name+'.jpg)'});
+                $('.bio_container > div > div:eq('+i+')').css({backgroundImage: 'url(../img/crew/'+name+'.jpg), url(../img/crew/'+name+'.png)'});
                 var position = $('.bio_container > div h3 > span:eq('+i+')').text();
                 $('.bio_container > div h3 > span:eq('+i+')').addClass(position);
             }
@@ -847,6 +847,6 @@ $(document).ready(function () {
             $('html, body').animate({
                 scrollTop: $(hash).offset().top
             }, 1000);//scroll time
-        }, 500);//scroll delay
+        }, 1100);//scroll delay
     }
 });

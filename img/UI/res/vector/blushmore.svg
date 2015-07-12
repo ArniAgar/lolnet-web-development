@@ -1,0 +1,9 @@
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="15" width="15" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs>
+    <radialGradient id="sphereGradient" gradientUnits="userSpaceOnUse" cx="11" cy="4" r="11" fx="11" fy="4">
+      <stop stop-color="#fff8f0" offset="0" />
+      <stop stop-color="#ffb098" offset="0.5" />
+      <stop stop-color="#ff8060" offset="1" />
+    </radialGradient>    <g id="face" stroke-width="1" stroke-linecap="round" stroke-linejoin="miter" fill="none">      <g stroke="#FF6060">        <polyline points="3 10 1 12" stroke="#FF6060" />        <polyline points="6 10 4 12" stroke="#FF6060" />        <polyline points="9 10 7 12" stroke="#FF6060" />        <polyline points="12 10 10 12" stroke="#FF6060" />        <polyline points="15 10 13 12" stroke="#FF6060" />        <polyline points="18 10 16 12" stroke="#FF6060" />      </g>      <polyline points="5.5 7.5 6.5 8.5 5.5 9.5" stroke="#803820" />      <polyline points="12.5 7.5 11.5 8.5 12.5 9.5" stroke="#803820" />    </g>    <mask id="mask">      <circle cy="7.5" cx="7.5" r="7.5" fill="white" />    </mask>
+  </defs>  <g>    <circle cy="7.5" cx="7.5" r="7.5" fill="#803820" />    <circle cy="7.5" cx="7.5" r="6.5" fill="url(#sphereGradient)" />  </g>  <g mask="url(#mask)">    <g>      <animateTransform id="face_l" attributeName="transform" type="translate" from="0,0" to="-3,0" begin="0s; face_r.end" dur="0.5s" />      <use xlink:href="#face" />      <animateTransform id="face_r" attributeName="transform" type="translate" from="-3,0" to="0,0" begin="face_l.end" dur="0.5s" />      <use xlink:href="#face" />    </g>  </g>
+</svg>

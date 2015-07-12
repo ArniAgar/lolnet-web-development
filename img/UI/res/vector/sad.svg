@@ -1,0 +1,38 @@
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="15" width="15" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<defs>
+<radialGradient id="radialGradient3809" gradientUnits="userSpaceOnUse" cy="3.409715" cx="11.50841" gradientTransform="matrix(-1.6924876,4.1085294e-8,-4.1111989e-8,-1.6935873,31.023377,9.2246068)" r="7.488839">
+<stop stop-color="#ffffc8" offset="0"/>
+<stop stop-color="#ffe000" offset="0.5"/>
+<stop stop-color="#e0a800" offset="1"/>
+</radialGradient>
+<linearGradient id="linearGradient3810" y2="9.5" gradientUnits="userSpaceOnUse" x2="6" y1="9.5" x1="4">
+<stop stop-color="#70e0ff" offset="0"/>
+<stop stop-color="#FFF" offset="1"/>
+</linearGradient>
+<linearGradient id="linearGradient3832" y2="1046.862" gradientUnits="userSpaceOnUse" x2="14" y1="1046.862" x1="12">
+<stop stop-color="#FFF" offset="0"/>
+<stop stop-color="#70e0ff" offset="1"/>
+</linearGradient>
+</defs>
+<metadata>
+<rdf:RDF>
+<cc:Work rdf:about="">
+<dc:format>image/svg+xml</dc:format>
+<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+<dc:title/>
+</cc:Work>
+</rdf:RDF>
+</metadata>
+<g transform="translate(0,-1037.3622)">
+<path d="m15,7.488839c0,4.135972-3.352867,7.488839-7.488839,7.488839s-7.488839-3.352867-7.488839-7.488839c-3E-7-4.135973,3.352867-7.488841,7.488839-7.488841,4.135969,0,7.488839,3.352868,7.488839,7.488839z" fill-rule="nonzero" transform="matrix(1.0014903,0,0,1.0014903,-0.02235497,1037.3622)" fill="#804000"/>
+<path d="m15,7.488839c0,4.135972-3.352867,7.488839-7.488839,7.488839s-7.488839-3.352867-7.488839-7.488839c-3E-7-4.135973,3.352867-7.488841,7.488839-7.488841,4.135969,0,7.488839,3.352868,7.488839,7.488839z" fill-rule="nonzero" transform="matrix(0.86795829,0,0,0.86795829,0.98062569,1038.3622)" fill="url(#radialGradient3809)"/>
+<path d="m7.797115,5.908627c0,0.8194037-0.6854576,1.483662-1.531012,1.483662-0.8455548,0-1.531012-0.6642579-1.531012-1.483662,0-0.8194036,0.6854576-1.483662,1.531012-1.483662,0.8455548,0,1.531012,0.6642579,1.531012,1.483662z" fill-rule="nonzero" transform="matrix(0.48987192,0,0,0.50550614,3.4304124,1042.8754)" fill="#804000"/>
+<path d="m7.797115,5.908627c0,0.8194037-0.6854576,1.483662-1.531012,1.483662-0.8455548,0-1.531012-0.6642579-1.531012-1.483662,0-0.8194036,0.6854576-1.483662,1.531012-1.483662,0.8455548,0,1.531012,0.6642579,1.531012,1.483662z" fill-rule="nonzero" transform="matrix(0.48987192,0,0,0.50550614,8.4304124,1042.8754)" fill="#804000"/>
+<path stroke-linejoin="miter" d="m5.5,1044.862,1.016466-1.0607" stroke="#804000" stroke-linecap="round" stroke-width="1px" fill="none"/>
+<path stroke-linejoin="miter" d="M12.5607,1044.862,11.5,1043.846" stroke="#804000" stroke-linecap="round" stroke-width="1px" fill="none"/>
+<path stroke-linejoin="miter" d="m7.5,11.5s0.438654-1,1.5-1,1.5,1,1.5,1" transform="translate(0,1037.3622)" stroke="#804000" stroke-linecap="round" stroke-width="1px" fill="none"/>
+<path stroke-linejoin="miter" d="m4.5,9.5,1,0" transform="translate(0,1037.3622)" stroke="url(#linearGradient3810)" stroke-linecap="round" stroke-miterlimit="4" stroke-dasharray="none" stroke-width="1.25" fill="none"/>
+<path stroke-linejoin="miter" d="m12.5,1046.862,1,0" stroke="url(#linearGradient3832)" stroke-linecap="round" stroke-miterlimit="4" stroke-dasharray="none" stroke-width="1.25" fill="none"/>
+</g>
+</svg>

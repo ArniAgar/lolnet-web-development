@@ -1,0 +1,25 @@
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="15" width="15" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<defs>
+<radialGradient id="radialGradient3830" gradientUnits="userSpaceOnUse" cy="3.409715" cx="11.50841" gradientTransform="matrix(-1.4690086,3.5660322e-8,-3.5683492e-8,-1.4699631,27.907623,9.0065739)" r="7.488839">
+<stop stop-color="#ffffc8" offset="0"/>
+<stop stop-color="#ffe000" offset="0.5"/>
+<stop stop-color="#e0a800" offset="1"/>
+</radialGradient>
+</defs>
+<metadata>
+<rdf:RDF>
+<cc:Work rdf:about="">
+<dc:format>image/svg+xml</dc:format>
+<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+<dc:title/>
+</cc:Work>
+</rdf:RDF>
+</metadata>
+<g fill-rule="nonzero" transform="translate(0,-1037.3622)">
+<path d="M7.5,0c-4.142136,8.326673E-16-7.5,3.357864-7.5,7.5,5.782412E-19,4.14214,3.357864,7.5,7.5,7.5,2.345289,0,4.43721-1.06418,5.8125-2.75l-4.8125-2.78125,6.3125-3.5625c-0.73623-3.36916-3.7225-5.90625-7.3125-5.90625z" transform="translate(0,1037.3622)" fill="#804000"/>
+<path d="M7.5,1c-3.589851,0-6.5,2.910149-6.5,6.5,0,3.58985,2.910149,6.5,6.5,6.5,1.609464,0,3.08354-0.56234,4.21875-1.53125l-4.46875-2.59375-0.75-0.4375,0.75-0.4375,6.40625-3.5625c-0.86336-2.576868-3.28875-4.4375-6.15625-4.4375z" transform="translate(0,1037.3622)" fill="url(#radialGradient3830)"/>
+<path d="m7.797115,5.908627c0,0.8194037-0.6854576,1.483662-1.531012,1.483662-0.8455548,0-1.531012-0.6642579-1.531012-1.483662,0-0.8194036,0.6854576-1.483662,1.531012-1.483662,0.8455548,0,1.531012,0.6642579,1.531012,1.483662z" transform="matrix(0.48987192,0,0,0.50550614,2.4304124,1041.8754)" fill="#804000"/>
+<path d="m7.797115,5.908627c0,0.8194037-0.6854576,1.483662-1.531012,1.483662-0.8455548,0-1.531012-0.6642579-1.531012-1.483662,0-0.8194036,0.6854576-1.483662,1.531012-1.483662,0.8455548,0,1.531012,0.6642579,1.531012,1.483662z" transform="matrix(0.48987192,0,0,0.50550614,8.4304124,1038.8754)" fill="#804000"/>
+</g>
+</svg>

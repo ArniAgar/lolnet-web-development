@@ -1,46 +1,49 @@
 [crew]
 [name]Thomas Eyles[/name]
+[position]Lead Web Dev & Design[/position]
+[details]
+Hey guys (and girls)! I'm Thomas and I'm from the mighty Upper Hutt. I study at Vic doing a bachelors of Commerce in Accounting and Economics - but I'm really a gamer and computer guy at heart.
+
+I enjoy gaming in my spare time - as you can probably guess. Some of those games include Osu!, DOTA2, CS:GO and CS:S to name a few. I remember when my family first got a Playstation One (just called a Playstation back then) - I was fascinated with the way that games worked and I really enjoyed playing those games. Since then, I've gone from PS1 an expensive desktop and everything in between.I've had heaps of awesome experiences along the way and I've made HEAPS of awesome mates inside and outside of New Zealand.
+
+Like I've said, I enjoy gaming and the way that gaming works and how people enjoy them. During 2014 and 2015 I've been able to work closely with Aspect of Gaming, Leaping Tiger, and Lolnet - all of which are fantastic gaming organisations in New Zealand and I've loved being able to help them achieve their goals.
+
+What I really want to achieve is to create a massive and down-to-earth gaming community, I always keep in mind that it's thanks to you, the gamers, that we can do what we do and I want to make sure you're all happy! :D
+[/details]
+[/crew]
+[crew]
+[name]TheChosenOne[/name]
+[position]Vanilla Administrator[/position]
+[details]
+Arrived August 2012.
+My goals are to have a lolnet Booth at Minecon or Armageddon (Gotta Dream Big).
+
+In 2 years time, I see myself coding some plugins or mods around gaming community.
+
+"If it doesn't work, call 0zlw. If it doesn't exist, call James. If it's broken, blame Arns." ~Chosen 2015
+[/details]
+[/crew]
+[crew]
+[name]James137137[/name]
+[position]Admin & Developer[/position]
+[details]
+Arrived Mar 2012.
+My goals are for Lolnet to be the best server in the world.
+
+In 2 years time, I see myself being the admin of the best server in the world (lolnet ofcourse).
+
+"Nothing is impossible"
+[/details]
+[/crew]
+[crew]
+[name]Chris_NZ[/name]
 [position]Administrator[/position]
-[details]Hey guys (and girls)! I’m Thomas and I’m from the mighty Upper Hutt. I study at Vic doing a bachelors of Commerce in Accounting and Economics – but I’m really a gamer and computer guy at heart.
+[details]
+Arrived July 2012.
+My goal is to see lots of players enjoying the hard work we put in to the server!
 
-I enjoy gaming in my spare time – as you can probably guess. Some of those games include Osu!, DOTA2, CS:GO and CS:S to name a few. I remember when my family first got a Playstation One (just called a Playstation back then) – I was fascinated with the way that games worked and I really enjoyed playing those games. Since then, I’ve gone from PS1 an expensive desktop and everything in between.I’ve had heaps of awesome experiences along the way and I’ve made HEAPS of awesome mates inside and outside of New Zealand.
+In 2 years time, I want to see the same as above.
 
-Like I’ve said, I enjoy gaming and the way that gaming works and how people enjoy them, being with APoG is pretty much a dream come true – not only can I play games, but I get to help organise awesome gaming events. Being able to help out with events is something that I’ve always wanted to do. What I love is to be able to bring gaming communities together.
-
-What I really want to achieve is to create a massive and down-to-earth gaming community, I always keep in mind that it’s thanks to you, the gamers, that we can do what we do and I want to always please you guys![/details]
-[/crew]
-[crew]
-[name]Thomas Eyles[/name]
-[position]Lead Web Designer & Dev[/position]
-[details]Lead web developer as part of the lolnet web development team.[/details]
-[/crew]
-[crew]
-[name]Thomas Eyles[/name]
-[position]Owner[/position]
-[details]Lead web developer as part of the lolnet web development team.[/details]
-[/crew]
-[crew]
-[name]Thomas Eyles[/name]
-[position]Community Manager[/position]
-[details]Lead web developer as part of the lolnet web development team.[/details]
-[/crew]
-[crew]
-[name]Thomas Eyles[/name]
-[position]Administrator[/position]
-[details]Lead web developer as part of the lolnet web development team.[/details]
-[/crew]
-[crew]
-[name]Thomas Eyles[/name]
-[position]Lead Web Designer & Dev[/position]
-[details]Lead web developer as part of the lolnet web development team.[/details]
-[/crew]
-[crew]
-[name]Thomas Eyles[/name]
-[position]Owner[/position]
-[details]Lead web developer as part of the lolnet web development team.[/details]
-[/crew]
-[crew]
-[name]Thomas Eyles[/name]
-[position]Community Manager[/position]
-[details]Lead web developer as part of the lolnet web development team.[/details]
+"You can quote me on that" - Chris 2015
+[/details]
 [/crew]
